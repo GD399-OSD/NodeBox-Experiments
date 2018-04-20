@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="0716037d-8238-460a-88bb-93a8a1382770">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate1">
+        <node name="colorize1" position="1.00,5.00" prototype="corevector.colorize"/>
+        <node name="frame1" position="1.00,-3.00" prototype="core.frame"/>
+        <node name="grid1" position="5.00,5.00" prototype="corevector.grid">
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="random_numbers1" position="5.00,-1.00" prototype="math.random_numbers">
+            <port name="end" type="float" value="10.0"/>
+        </node>
+        <node name="rect1" position="1.00,3.00" prototype="corevector.rect"/>
+        <node name="rgb_color1" position="-5.00,3.00" prototype="color.rgb_color"/>
+        <node name="sample1" position="1.00,1.00" prototype="math.sample"/>
+        <node name="translate1" position="1.00,7.00" prototype="corevector.translate"/>
+        <node name="wave1" position="1.00,-1.00" prototype="math.wave">
+            <port name="max" type="float" value="200.0"/>
+            <port name="period" type="float" value="720.0"/>
+        </node>
+        <node name="wave2" position="-7.00,-1.00" prototype="math.wave">
+            <port name="max" type="float" value="255.0"/>
+            <port name="period" type="float" value="64.0"/>
+        </node>
+        <node name="wave3" position="-3.00,1.00" prototype="math.wave">
+            <port name="max" type="float" value="255.0"/>
+            <port name="period" type="float" value="111.0"/>
+        </node>
+        <node name="wave4" position="-5.00,0.00" prototype="math.wave">
+            <port name="max" type="float" value="255.0"/>
+            <port name="period" type="float" value="55.0"/>
+        </node>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="wave1.offset" output="frame1"/>
+        <conn input="colorize1.shape" output="rect1"/>
+        <conn input="translate1.shape" output="colorize1"/>
+        <conn input="wave2.offset" output="frame1"/>
+        <conn input="rgb_color1.red" output="wave2"/>
+        <conn input="wave3.offset" output="frame1"/>
+        <conn input="wave4.offset" output="frame1"/>
+        <conn input="rgb_color1.green" output="wave4"/>
+        <conn input="rgb_color1.blue" output="wave3"/>
+        <conn input="rect1.width" output="sample1"/>
+        <conn input="rect1.height" output="sample1"/>
+        <conn input="sample1.end" output="wave1"/>
+        <conn input="random_numbers1.seed" output="frame1"/>
+        <conn input="sample1.amount" output="random_numbers1"/>
+    </node>
+</ndbx>

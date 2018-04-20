@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="d0be6d6b-b847-4fb9-942c-8040ba63c76a">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="line1">
+        <node name="frame1" position="6.00,-8.00" prototype="core.frame"/>
+        <node name="line1" position="2.00,-2.00" prototype="corevector.line"/>
+        <node name="random_numbers2" position="4.00,-5.00" prototype="math.random_numbers"/>
+        <node name="random_numbers3" position="2.00,-6.00" prototype="math.random_numbers"/>
+        <node name="random_numbers4" position="0.00,-7.00" prototype="math.random_numbers"/>
+        <conn input="line1.points" output="random_numbers2"/>
+        <conn input="line1.point2" output="random_numbers3"/>
+        <conn input="random_numbers3.start" output="random_numbers4"/>
+        <conn input="line1.point1" output="random_numbers4"/>
+        <conn input="random_numbers4.seed" output="frame1"/>
+        <conn input="random_numbers3.seed" output="frame1"/>
+        <conn input="random_numbers2.seed" output="frame1"/>
+        <conn input="random_numbers4.end" output="frame1"/>
+        <conn input="random_numbers3.end" output="frame1"/>
+        <conn input="random_numbers2.end" output="frame1"/>
+    </node>
+</ndbx>

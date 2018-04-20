@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="1973a736-58a7-4618-950e-5541d8ba7644">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="delete1">
+        <node name="colorize1" position="10.00,8.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ff995aff"/>
+        </node>
+        <node name="colorize2" position="14.00,14.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#e7e7e7ff"/>
+        </node>
+        <node name="combine1" position="10.00,16.00" prototype="list.combine"/>
+        <node name="copy1" position="10.00,10.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="2"/>
+            <port name="rotate" type="float" value="45.0"/>
+        </node>
+        <node name="copy2" position="10.00,11.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="2"/>
+            <port name="rotate" type="float" value="60.0"/>
+        </node>
+        <node name="copy3" position="10.00,12.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="2"/>
+        </node>
+        <node name="delete1" prototype="corevector.delete">
+            <port name="scope" type="string" value="paths"/>
+            <port name="operation" type="string" value="non-selected"/>
+        </node>
+        <node name="ellipse1" position="6.00,5.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="5.0"/>
+            <port name="height" type="float" value="5.0"/>
+        </node>
+        <node name="ellipse2" position="14.00,9.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="300.0"/>
+            <port name="height" type="float" value="300.0"/>
+        </node>
+        <node name="frame1" position="6.00,2.00" prototype="core.frame"/>
+        <node name="grid1" position="14.00,5.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="30"/>
+            <port name="rows" type="int" value="30"/>
+        </node>
+        <node name="multiply1" position="6.00,10.00" prototype="math.multiply">
+            <port name="value2" type="float" value="-0.5"/>
+        </node>
+        <node name="multiply2" position="5.00,11.00" prototype="math.multiply">
+            <port name="value2" type="float" value="-0.33"/>
+        </node>
+        <node name="random_numbers1" position="-2.00,5.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="3"/>
+            <port name="end" type="float" value="255.0"/>
+            <port name="seed" type="int" value="1"/>
+        </node>
+        <node name="random_numbers2" position="0.00,6.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="2"/>
+            <port name="end" type="float" value="255.0"/>
+            <port name="seed" type="int" value="2"/>
+        </node>
+        <node name="random_numbers3" position="2.00,7.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="2"/>
+            <port name="end" type="float" value="255.0"/>
+            <port name="seed" type="int" value="2"/>
+        </node>
+        <node name="rgb_color1" position="0.00,10.00" prototype="color.rgb_color"/>
+        <node name="textpath1" position="14.00,13.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="B"/>
+            <port name="font_name" type="string" value="OstrichSansDashed-Medium"/>
+            <port name="font_size" type="float" value="310.0"/>
+            <port name="position" type="point" value="16.00,100.00"/>
+        </node>
+        <node name="translate1" position="10.00,7.00" prototype="corevector.translate"/>
+        <node name="wave1" position="6.00,8.00" prototype="math.wave">
+            <port name="max" type="float" value="359.0"/>
+        </node>
+        <conn input="translate1.shape" output="ellipse1"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="colorize1.shape" output="translate1"/>
+        <conn input="copy1.shape" output="colorize1"/>
+        <conn input="delete1.bounding" output="ellipse2"/>
+        <conn input="colorize1.fill" output="rgb_color1"/>
+        <conn input="rgb_color1.red" output="random_numbers1"/>
+        <conn input="rgb_color1.green" output="random_numbers2"/>
+        <conn input="rgb_color1.blue" output="random_numbers3"/>
+        <conn input="random_numbers1.seed" output="frame1"/>
+        <conn input="random_numbers2.seed" output="frame1"/>
+        <conn input="random_numbers3.seed" output="random_numbers2"/>
+        <conn input="copy2.shape" output="copy1"/>
+        <conn input="copy2.rotate" output="multiply1"/>
+        <conn input="colorize2.shape" output="textpath1"/>
+        <conn input="copy3.shape" output="copy2"/>
+        <conn input="delete1.shape" output="copy3"/>
+        <conn input="copy3.rotate" output="multiply2"/>
+        <conn input="combine1.list2" output="colorize2"/>
+        <conn input="wave1.offset" output="frame1"/>
+        <conn input="multiply1.value1" output="wave1"/>
+        <conn input="multiply2.value1" output="wave1"/>
+        <conn input="copy1.rotate" output="wave1"/>
+    </node>
+</ndbx>

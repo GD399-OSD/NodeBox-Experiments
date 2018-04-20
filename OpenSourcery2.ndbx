@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="4731649c-3add-4b62-8e19-306912cc0fe8">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="colorize3">
+        <node name="color1" position="-12.00,6.00" prototype="color.color">
+            <port name="color" type="color" value="#bf6767ff"/>
+        </node>
+        <node name="color2" position="-10.00,4.00" prototype="color.color">
+            <port name="color" type="color" value="#a6b064ff"/>
+        </node>
+        <node name="color3" position="-11.00,5.00" prototype="color.color">
+            <port name="color" type="color" value="#9d5dc3ff"/>
+        </node>
+        <node name="color4" position="-9.00,3.00" prototype="color.color">
+            <port name="color" type="color" value="#6cda99ff"/>
+        </node>
+        <node name="colorize3" position="-2.00,9.00" prototype="corevector.colorize"/>
+        <node name="combine2" position="-6.00,6.00" prototype="list.combine"/>
+        <node name="polygon1" position="-2.00,5.00" prototype="corevector.polygon">
+            <port name="radius" type="float" value="3.0"/>
+        </node>
+        <node name="sample1" position="-5.00,3.00" prototype="math.sample">
+            <port name="start" type="float" value="3.0"/>
+            <port name="end" type="float" value="7.0"/>
+        </node>
+        <node name="scatter3" position="-2.00,3.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="870"/>
+        </node>
+        <node name="textpath2" position="-2.00,1.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="OPEN SOURCERY"/>
+            <port name="font_name" type="string" value="LinLibertineOBI"/>
+            <port name="font_size" type="float" value="63.0"/>
+            <port name="align" type="string" value="LEFT"/>
+            <port name="width" type="float" value="337.0"/>
+        </node>
+        <conn input="scatter3.shape" output="textpath2"/>
+        <conn input="polygon1.position" output="scatter3"/>
+        <conn input="polygon1.sides" output="sample1"/>
+        <conn input="combine2.list1" output="color4"/>
+        <conn input="combine2.list2" output="color2"/>
+        <conn input="combine2.list3" output="color3"/>
+        <conn input="colorize3.fill" output="combine2"/>
+        <conn input="colorize3.shape" output="polygon1"/>
+        <conn input="combine2.list4" output="color1"/>
+    </node>
+</ndbx>

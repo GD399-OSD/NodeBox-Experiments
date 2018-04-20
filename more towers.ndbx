@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="08cbdf45-8153-44c1-946b-1e3982b0599a">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="Tower">
+        <node name="Tower" prototype="core.network" renderedChild="group1">
+            <node name="Accumulation" position="3.00,-4.00" prototype="core.network" renderedChild="make_point1">
+                <node name="make_point1" position="1.00,4.00" prototype="corevector.make_point"/>
+                <node name="negate1" position="1.00,3.00" prototype="math.negate"/>
+                <node name="slice1" position="1.00,1.00" prototype="list.slice"/>
+                <node name="sum1" position="1.00,2.00" prototype="math.sum"/>
+                <port childReference="slice1.list" description="The input list." label="" name="list" range="list" type="list" widget="none"/>
+                <port childReference="slice1.size" description="The amount of items to take from the list." label="" min="0.0" name="size" range="value" type="int" value="10" widget="int"/>
+                <port childReference="make_point1.x" description="The X position of the point." label="" name="x-location" range="value" type="float" value="0.0" widget="float"/>
+                <conn input="sum1.values" output="slice1"/>
+                <conn input="negate1.value" output="sum1"/>
+                <conn input="make_point1.y" output="negate1"/>
+            </node>
+            <node name="align1" position="-3.00,1.00" prototype="corevector.align">
+                <port name="halign" type="string" value="none"/>
+                <port name="valign" type="string" value="bottom"/>
+            </node>
+            <node name="group1" position="-3.00,4.00" prototype="corevector.group"/>
+            <node name="number1" position="-2.00,-5.00" prototype="math.number">
+                <port name="value" type="float" value="18.0"/>
+            </node>
+            <node name="random_numbers1" position="-4.00,-2.00" prototype="math.random_numbers">
+                <port name="start" type="float" value="1.0"/>
+                <port name="end" type="float" value="50.0"/>
+                <port name="seed" type="int" value="271"/>
+            </node>
+            <node name="random_numbers2" position="-1.00,-2.00" prototype="math.random_numbers">
+                <port name="start" type="float" value="20.0"/>
+                <port name="end" type="float" value="50.0"/>
+            </node>
+            <node name="range1" position="3.00,-5.00" prototype="math.range"/>
+            <node name="rect1" position="-3.00,0.00" prototype="corevector.rect"/>
+            <node name="translate1" position="-3.00,2.00" prototype="corevector.translate"/>
+            <port childReference="number1.value" description="" label="" name="segments" range="value" type="float" value="18.0" widget="float"/>
+            <port childReference="random_numbers1.seed" description="" label="" name="width" range="value" type="int" value="271" widget="int"/>
+            <port childReference="random_numbers2.seed" description="" label="" name="height" range="value" type="int" value="0" widget="int"/>
+            <port childReference="Accumulation.x-location" description="The X position of the point." label="" name="x-location" range="value" type="float" value="0.0" widget="float"/>
+            <conn input="random_numbers1.amount" output="number1"/>
+            <conn input="random_numbers2.amount" output="number1"/>
+            <conn input="Accumulation.list" output="random_numbers2"/>
+            <conn input="Accumulation.size" output="range1"/>
+            <conn input="range1.end" output="number1"/>
+            <conn input="align1.shape" output="rect1"/>
+            <conn input="translate1.shape" output="align1"/>
+            <conn input="translate1.translate" output="Accumulation"/>
+            <conn input="rect1.width" output="random_numbers1"/>
+            <conn input="rect1.height" output="random_numbers2"/>
+            <conn input="group1.shapes" output="translate1"/>
+        </node>
+        <node name="count1" position="4.00,-7.00" prototype="list.count"/>
+        <node name="divide1" position="-2.00,-6.00" prototype="math.divide">
+            <port name="value2" type="float" value="4.0"/>
+        </node>
+        <node name="frame1" position="-2.00,-7.00" prototype="core.frame"/>
+        <node name="line1" position="4.00,-4.00" prototype="corevector.line"/>
+        <node name="make_point1" position="5.00,-5.00" prototype="corevector.make_point"/>
+        <node name="make_point2" position="9.00,-5.00" prototype="corevector.make_point"/>
+        <node name="multiply1" position="5.00,-6.00" prototype="math.multiply">
+            <port name="value2" type="float" value="30.0"/>
+        </node>
+        <node name="multiply2" position="-3.00,-2.00" prototype="math.multiply">
+            <port name="value2" type="float" value="30.0"/>
+        </node>
+        <node name="negate1" position="9.00,-6.00" prototype="math.negate"/>
+        <node name="random_numbers1" position="0.00,-3.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="0"/>
+            <port name="end" type="float" value="0.0"/>
+        </node>
+        <node name="resample1" position="4.00,-3.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+        </node>
+        <node name="round1" position="0.00,-2.00" prototype="math.round"/>
+        <node name="round2" position="-2.00,-5.00" prototype="math.round"/>
+        <node name="translate1" position="0.00,2.00" prototype="corevector.translate"/>
+        <conn input="round1.value" output="random_numbers1"/>
+        <conn input="Tower.segments" output="round1"/>
+        <conn input="count1.list" output="round1"/>
+        <conn input="multiply1.value1" output="count1"/>
+        <conn input="make_point1.x" output="multiply1"/>
+        <conn input="line1.point2" output="make_point1"/>
+        <conn input="resample1.shape" output="line1"/>
+        <conn input="resample1.points" output="count1"/>
+        <conn input="translate1.shape" output="Tower"/>
+        <conn input="translate1.translate" output="resample1"/>
+        <conn input="multiply2.value1" output="round1"/>
+        <conn input="Tower.width" output="multiply2"/>
+        <conn input="negate1.value" output="multiply1"/>
+        <conn input="make_point2.x" output="negate1"/>
+        <conn input="line1.point1" output="make_point2"/>
+        <conn input="round2.value" output="divide1"/>
+        <conn input="random_numbers1.amount" output="round2"/>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="random_numbers1.end" output="round2"/>
+    </node>
+</ndbx>

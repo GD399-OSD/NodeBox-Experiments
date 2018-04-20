@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="1973a736-58a7-4618-950e-5541d8ba7644">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="delete1">
+        <node name="colorize1" position="10.00,9.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ff995aff"/>
+        </node>
+        <node name="copy1" position="10.00,10.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="2"/>
+            <port name="rotate" type="float" value="45.0"/>
+        </node>
+        <node name="delete1" position="10.00,13.00" prototype="corevector.delete">
+            <port name="scope" type="string" value="paths"/>
+            <port name="operation" type="string" value="non-selected"/>
+        </node>
+        <node name="ellipse1" position="10.00,5.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="8.0"/>
+            <port name="height" type="float" value="8.0"/>
+        </node>
+        <node name="ellipse2" position="11.00,11.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="300.0"/>
+            <port name="height" type="float" value="300.0"/>
+        </node>
+        <node name="frame1" position="7.00,0.00" prototype="core.frame"/>
+        <node name="grid1" position="13.00,5.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="31"/>
+            <port name="rows" type="int" value="31"/>
+        </node>
+        <node name="multiply3" position="7.00,1.00" prototype="math.multiply">
+            <port name="value2" type="float" value="0.1"/>
+        </node>
+        <node name="random_numbers1" position="2.00,6.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="3"/>
+            <port name="end" type="float" value="255.0"/>
+            <port name="seed" type="int" value="1"/>
+        </node>
+        <node name="random_numbers2" position="4.00,7.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="2"/>
+            <port name="end" type="float" value="255.0"/>
+            <port name="seed" type="int" value="2"/>
+        </node>
+        <node name="random_numbers3" position="6.00,8.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="1"/>
+            <port name="end" type="float" value="255.0"/>
+            <port name="seed" type="int" value="3"/>
+        </node>
+        <node name="rgb_color1" position="6.00,10.00" prototype="color.rgb_color"/>
+        <node name="translate1" position="10.00,8.00" prototype="corevector.translate"/>
+        <node name="wave2" position="2.00,3.00" prototype="math.wave">
+            <port name="max" type="float" value="255.0"/>
+            <port name="period" type="float" value="249.0"/>
+        </node>
+        <node name="wave3" position="4.00,4.00" prototype="math.wave">
+            <port name="max" type="float" value="255.0"/>
+            <port name="period" type="float" value="137.0"/>
+        </node>
+        <node name="wave4" position="6.00,5.00" prototype="math.wave">
+            <port name="min" type="float" value="50.0"/>
+            <port name="max" type="float" value="255.0"/>
+            <port name="period" type="float" value="351.0"/>
+        </node>
+        <conn input="translate1.shape" output="ellipse1"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="colorize1.shape" output="translate1"/>
+        <conn input="copy1.shape" output="colorize1"/>
+        <conn input="delete1.bounding" output="ellipse2"/>
+        <conn input="rgb_color1.red" output="random_numbers1"/>
+        <conn input="random_numbers1.end" output="wave2"/>
+        <conn input="random_numbers2.end" output="wave3"/>
+        <conn input="random_numbers3.end" output="wave4"/>
+        <conn input="multiply3.value1" output="frame1"/>
+        <conn input="wave4.offset" output="multiply3"/>
+        <conn input="wave3.offset" output="multiply3"/>
+        <conn input="wave2.offset" output="multiply3"/>
+        <conn input="delete1.shape" output="copy1"/>
+        <conn input="copy1.rotate" output="multiply3"/>
+        <conn input="rgb_color1.green" output="random_numbers2"/>
+        <conn input="rgb_color1.blue" output="random_numbers3"/>
+        <conn input="colorize1.fill" output="rgb_color1"/>
+    </node>
+</ndbx>

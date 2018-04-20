@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="18ea4213-78fa-447c-9daf-5419d9ce92b4">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="colorize1">
+        <node name="color1" position="-7.00,1.00" prototype="color.color">
+            <port name="color" type="color" value="#bf6767ff"/>
+        </node>
+        <node name="color2" position="-6.00,0.00" prototype="color.color">
+            <port name="color" type="color" value="#a6b064ff"/>
+        </node>
+        <node name="color3" position="-5.00,-1.00" prototype="color.color">
+            <port name="color" type="color" value="#9d5dc3ff"/>
+        </node>
+        <node name="color4" position="-4.00,-2.00" prototype="color.color">
+            <port name="color" type="color" value="#6cda99ff"/>
+        </node>
+        <node name="color5" position="-3.00,-3.00" prototype="color.color">
+            <port name="color" type="color" value="#7cabc1ff"/>
+        </node>
+        <node name="colorize1" position="3.00,6.00" prototype="corevector.colorize"/>
+        <node name="combine1" position="-4.00,5.00" prototype="list.combine"/>
+        <node name="combine2" position="-7.00,2.00" prototype="list.combine"/>
+        <node name="frame1" position="1.00,-1.00" prototype="core.frame"/>
+        <node name="grid1" position="5.00,-1.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="6"/>
+            <port name="width" type="float" value="50.0"/>
+            <port name="height" type="float" value="90.0"/>
+            <port name="position" type="point" value="-25.00,0.00"/>
+        </node>
+        <node name="group1" position="3.00,5.00" prototype="corevector.group"/>
+        <node name="pick1" position="3.00,2.00" prototype="list.pick">
+            <port name="amount" type="int" value="30"/>
+            <port name="seed" type="int" value="79"/>
+        </node>
+        <node name="pick2" position="-6.00,3.00" prototype="list.pick">
+            <port name="amount" type="int" value="10"/>
+        </node>
+        <node name="pick3" position="-3.00,6.00" prototype="list.pick">
+            <port name="amount" type="int" value="20"/>
+        </node>
+        <node name="rect1" position="3.00,3.00" prototype="corevector.rect">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="reflect1" position="3.00,4.00" prototype="corevector.reflect">
+            <port name="position" type="point" value="5.00,0.00"/>
+            <port name="angle" type="float" value="90.0"/>
+        </node>
+        <node name="reverse1" position="-5.00,4.00" prototype="list.reverse"/>
+        <conn input="pick1.list" output="grid1"/>
+        <conn input="rect1.position" output="pick1"/>
+        <conn input="pick1.seed" output="frame1"/>
+        <conn input="combine2.list2" output="color2"/>
+        <conn input="combine2.list3" output="color3"/>
+        <conn input="combine2.list5" output="color5"/>
+        <conn input="combine2.list4" output="color4"/>
+        <conn input="combine2.list1" output="color1"/>
+        <conn input="pick2.list" output="combine2"/>
+        <conn input="reverse1.list" output="pick2"/>
+        <conn input="combine1.list1" output="combine2"/>
+        <conn input="combine1.list2" output="pick2"/>
+        <conn input="combine1.list3" output="reverse1"/>
+        <conn input="pick3.list" output="combine1"/>
+        <conn input="colorize1.fill" output="pick3"/>
+        <conn input="pick3.seed" output="frame1"/>
+        <conn input="reflect1.shape" output="rect1"/>
+        <conn input="group1.shapes" output="reflect1"/>
+        <conn input="colorize1.shape" output="group1"/>
+    </node>
+</ndbx>
