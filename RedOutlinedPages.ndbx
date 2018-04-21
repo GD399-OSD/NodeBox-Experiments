@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="aefb5a8b-e5d6-42bb-a2c3-35b2fbf90c50">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate1">
+        <node name="A4Page" position="-7.00,-4.00" prototype="core.network" renderedChild="group1">
+            <node name="a4page" position="-4.00,-1.00" prototype="corevector.rect">
+                <port name="width" type="float" value="84.1"/>
+                <port name="height" type="float" value="118.9"/>
+            </node>
+            <node name="border" position="-3.00,10.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ffffffff"/>
+                <port name="strokeWidth" type="float" value="0.5"/>
+            </node>
+            <node name="combine1" position="-3.00,3.00" prototype="list.combine"/>
+            <node name="combine2" position="0.00,3.00" prototype="list.combine"/>
+            <node name="combine3" position="-3.00,8.00" prototype="list.combine"/>
+            <node name="compound1" position="-3.00,6.00" prototype="corevector.compound">
+                <port name="function" type="string" value="subtracted"/>
+            </node>
+            <node name="connect1" position="-3.00,4.00" prototype="corevector.connect"/>
+            <node name="connect2" position="0.00,4.00" prototype="corevector.connect"/>
+            <node name="divide1" position="0.00,-4.00" prototype="math.divide">
+                <port name="value2" type="float" value="10.0"/>
+            </node>
+            <node name="divide2" position="4.00,-4.00" prototype="math.divide">
+                <port name="value2" type="float" value="2.0"/>
+            </node>
+            <node name="divide3" position="7.00,-4.00" prototype="math.divide">
+                <port name="value2" type="float" value="2.0"/>
+            </node>
+            <node name="group1" position="-3.00,11.00" prototype="corevector.group"/>
+            <node name="height" position="-1.00,-6.00" prototype="math.number">
+                <port name="value" type="float" value="118.9"/>
+            </node>
+            <node name="make_point1" position="0.00,-1.00" prototype="corevector.make_point"/>
+            <node name="make_point2" position="1.00,0.00" prototype="corevector.make_point"/>
+            <node name="make_point3" position="2.00,1.00" prototype="corevector.make_point"/>
+            <node name="make_point4" position="7.00,0.00" prototype="corevector.make_point"/>
+            <node name="make_point5" position="4.00,0.00" prototype="corevector.make_point"/>
+            <node name="negate1" position="4.00,-3.00" prototype="math.negate"/>
+            <node name="negate2" position="7.00,-3.00" prototype="math.negate"/>
+            <node name="subtract1" position="0.00,-3.00" prototype="math.subtract"/>
+            <node name="translate1" position="-3.00,5.00" prototype="corevector.translate">
+                <port name="translate" type="point" value="-42.00,-60.00"/>
+            </node>
+            <node name="translate2" position="0.00,5.00" prototype="corevector.translate">
+                <port name="translate" type="point" value="-42.00,-60.00"/>
+            </node>
+            <node name="width" position="-4.00,-6.00" prototype="math.number">
+                <port name="value" type="float" value="84.1"/>
+            </node>
+            <port childReference="border.stroke" description="The new stroke color." label="" name="stroke" range="value" type="color" value="#000000ff" widget="color"/>
+            <conn input="compound1.shape1" output="a4page"/>
+            <conn input="a4page.width" output="width"/>
+            <conn input="a4page.height" output="height"/>
+            <conn input="divide1.value1" output="width"/>
+            <conn input="make_point1.x" output="subtract1"/>
+            <conn input="combine1.list1" output="make_point1"/>
+            <conn input="connect1.points" output="combine1"/>
+            <conn input="combine1.list2" output="make_point2"/>
+            <conn input="combine1.list3" output="make_point3"/>
+            <conn input="make_point2.x" output="width"/>
+            <conn input="subtract1.value1" output="width"/>
+            <conn input="subtract1.value2" output="divide1"/>
+            <conn input="make_point3.x" output="width"/>
+            <conn input="make_point3.y" output="divide1"/>
+            <conn input="translate1.shape" output="connect1"/>
+            <conn input="compound1.shape2" output="translate1"/>
+            <conn input="negate1.value" output="divide2"/>
+            <conn input="translate1.translate" output="make_point4"/>
+            <conn input="negate2.value" output="divide3"/>
+            <conn input="divide3.value1" output="height"/>
+            <conn input="divide2.value1" output="width"/>
+            <conn input="make_point4.x" output="negate1"/>
+            <conn input="make_point4.y" output="negate2"/>
+            <conn input="combine2.list1" output="make_point1"/>
+            <conn input="connect2.points" output="combine2"/>
+            <conn input="make_point5.y" output="divide1"/>
+            <conn input="make_point5.x" output="subtract1"/>
+            <conn input="translate2.translate" output="make_point4"/>
+            <conn input="translate2.shape" output="connect2"/>
+            <conn input="combine3.list1" output="compound1"/>
+            <conn input="border.shape" output="combine3"/>
+            <conn input="combine3.list2" output="translate2"/>
+            <conn input="combine2.list2" output="make_point5"/>
+            <conn input="combine2.list3" output="make_point3"/>
+            <conn input="group1.shapes" output="border"/>
+        </node>
+        <node name="integer1" position="0.00,-6.00" prototype="math.integer">
+            <port name="value" type="int" value="892"/>
+        </node>
+        <node category="Red" description="Main REd" name="mainred" position="-7.00,-6.00" prototype="color.color">
+            <port name="color" type="color" value="#d43c19ff"/>
+        </node>
+        <node name="make_point1" position="-5.00,-1.00" prototype="corevector.make_point"/>
+        <node name="sample1" position="-2.00,-4.00" prototype="math.sample">
+            <port name="amount" type="int" value="136"/>
+            <port name="start" type="float" value="-543.0"/>
+            <port name="end" type="float" value="528.0"/>
+        </node>
+        <node name="sample2" position="2.00,-4.00" prototype="math.sample">
+            <port name="amount" type="int" value="25"/>
+            <port name="start" type="float" value="-530.0"/>
+            <port name="end" type="float" value="567.0"/>
+        </node>
+        <node name="shuffle1" position="-2.00,-3.00" prototype="list.shuffle">
+            <port name="seed" type="int" value="-1"/>
+        </node>
+        <node name="shuffle2" position="2.00,-3.00" prototype="list.shuffle">
+            <port name="seed" type="int" value="2"/>
+        </node>
+        <node name="translate1" position="-7.00,1.00" prototype="corevector.translate"/>
+        <conn input="A4Page.stroke" output="mainred"/>
+        <conn input="shuffle1.list" output="sample1"/>
+        <conn input="shuffle2.list" output="sample2"/>
+        <conn input="make_point1.x" output="shuffle1"/>
+        <conn input="make_point1.y" output="shuffle2"/>
+        <conn input="translate1.shape" output="A4Page"/>
+        <conn input="translate1.translate" output="make_point1"/>
+        <conn input="sample1.amount" output="integer1"/>
+        <conn input="sample2.amount" output="integer1"/>
+    </node>
+</ndbx>
