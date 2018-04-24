@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="5bf8a1a0-42b4-43e5-b52a-4d9ee551bb5b">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="combine1" position="-1.00,14.00" prototype="list.combine"/>
+        <node name="copy1" position="-3.00,12.00" prototype="corevector.copy">
+            <port name="translate" type="point" value="-22.00,0.00"/>
+            <port name="rotate" type="float" value="-47.0"/>
+        </node>
+        <node name="copy2" position="1.00,12.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="15"/>
+            <port name="order" type="string" value="rst"/>
+            <port name="rotate" type="float" value="36.0"/>
+        </node>
+        <node name="ellipse1" position="-7.00,7.00" prototype="corevector.ellipse"/>
+        <node name="frame1" position="5.00,4.00" prototype="core.frame"/>
+        <node name="grid1" position="-11.00,4.00" prototype="corevector.grid"/>
+        <node name="sample1" position="-3.00,3.00" prototype="math.sample">
+            <port name="amount" type="int" value="0"/>
+            <port name="start" type="float" value="48.0"/>
+            <port name="end" type="float" value="56.0"/>
+        </node>
+        <node name="textpath2" position="0.00,7.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="Node As Code."/>
+            <port name="font_name" type="string" value="VesperLibre-Regular"/>
+            <port name="font_size" type="float" value="15.0"/>
+        </node>
+        <node name="translate1" position="-6.00,10.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="82.00,-61.00"/>
+        </node>
+        <node name="translate2" position="1.00,10.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="73.00,112.00"/>
+        </node>
+        <node name="wave1" position="6.00,7.00" prototype="math.wave">
+            <port name="max" type="float" value="20.0"/>
+            <port name="period" type="float" value="48.0"/>
+            <port name="offset" type="float" value="-21.0"/>
+        </node>
+        <conn input="copy1.shape" output="translate1"/>
+        <conn input="copy2.shape" output="translate2"/>
+        <conn input="combine1.list1" output="copy1"/>
+        <conn input="combine1.list2" output="copy2"/>
+        <conn input="translate2.translate" output="wave1"/>
+        <conn input="translate1.translate" output="wave1"/>
+        <conn input="wave1.offset" output="frame1"/>
+        <conn input="translate2.shape" output="textpath2"/>
+        <conn input="ellipse1.width" output="sample1"/>
+        <conn input="translate1.shape" output="ellipse1"/>
+        <conn input="ellipse1.height" output="sample1"/>
+        <conn input="ellipse1.position" output="grid1"/>
+    </node>
+</ndbx>

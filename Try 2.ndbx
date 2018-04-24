@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="6c2bb204-6276-43ff-8aba-20603450d1fb">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate1">
+        <node name="frame1" position="-1.00,0.00" prototype="core.frame"/>
+        <node name="grid1" position="7.00,6.00" prototype="corevector.grid">
+            <port name="rows" type="int" value="28"/>
+            <port name="width" type="float" value="426.0"/>
+            <port name="height" type="float" value="518.0"/>
+            <port name="position" type="point" value="-15.00,-153.00"/>
+        </node>
+        <node name="sample1" position="4.00,2.00" prototype="math.sample">
+            <port name="amount" type="int" value="110"/>
+            <port name="start" type="float" value="114.0"/>
+            <port name="end" type="float" value="-62.0"/>
+        </node>
+        <node name="textpath1" position="1.00,5.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="THIS IS NODEBOX"/>
+            <port name="font_name" type="string" value="Millimetre-Regular"/>
+            <port name="font_size" type="float" value="7.0"/>
+            <port name="position" type="point" value="0.00,61.00"/>
+            <port name="width" type="float" value="55.0"/>
+        </node>
+        <node name="translate1" position="5.00,10.00" prototype="corevector.translate"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="sample1.amount" output="frame1"/>
+        <conn input="translate1.shape" output="textpath1"/>
+        <conn input="textpath1.width" output="sample1"/>
+        <conn input="textpath1.position" output="sample1"/>
+        <conn input="textpath1.font_name" output="sample1"/>
+    </node>
+</ndbx>

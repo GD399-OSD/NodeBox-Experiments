@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="c94a602b-bf6c-4ccc-af69-9e334f5af188">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="colorize1" position="-5.00,4.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#2400ffff"/>
+        </node>
+        <node name="colorize2" position="8.00,4.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ff6200ff"/>
+        </node>
+        <node name="combine1" position="-2.00,11.00" prototype="list.combine"/>
+        <node name="copy1" position="-5.00,8.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="8"/>
+            <port name="rotate" type="float" value="373.0"/>
+            <port name="scale" type="point" value="50.00,50.00"/>
+        </node>
+        <node name="copy2" position="4.00,9.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="13"/>
+            <port name="rotate" type="float" value="65.0"/>
+            <port name="scale" type="point" value="200.00,200.00"/>
+        </node>
+        <node name="grid1" position="-4.00,-2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="2"/>
+            <port name="rows" type="int" value="13"/>
+        </node>
+        <node name="grid2" position="4.00,-2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="3"/>
+            <port name="rows" type="int" value="29"/>
+            <port name="width" type="float" value="357.0"/>
+            <port name="height" type="float" value="369.0"/>
+        </node>
+        <node name="resample1" position="-2.00,6.00" prototype="corevector.resample">
+            <port name="length" type="float" value="1.0"/>
+            <port name="points" type="int" value="16"/>
+            <port name="per_contour" type="boolean" value="true"/>
+        </node>
+        <node name="resample2" position="7.00,7.00" prototype="corevector.resample">
+            <port name="length" type="float" value="11.0"/>
+            <port name="points" type="int" value="19"/>
+            <port name="per_contour" type="boolean" value="true"/>
+        </node>
+        <node name="textpath1" position="-1.00,1.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="NodeBoxers"/>
+            <port name="font_name" type="string" value="VesperLibre-Heavy"/>
+            <port name="font_size" type="float" value="13.0"/>
+        </node>
+        <node name="textpath2" position="7.00,1.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="NodeBoxers"/>
+            <port name="font_name" type="string" value="VesperLibre-Heavy"/>
+            <port name="font_size" type="float" value="7.0"/>
+        </node>
+        <node name="wave1" position="13.00,7.00" prototype="math.wave"/>
+        <conn input="textpath1.position" output="grid1"/>
+        <conn input="colorize1.shape" output="textpath1"/>
+        <conn input="resample1.shape" output="colorize1"/>
+        <conn input="copy1.shape" output="resample1"/>
+        <conn input="textpath2.position" output="grid2"/>
+        <conn input="colorize2.shape" output="textpath2"/>
+        <conn input="resample2.shape" output="colorize2"/>
+        <conn input="copy2.shape" output="resample2"/>
+        <conn input="combine1.list1" output="copy1"/>
+        <conn input="combine1.list2" output="copy2"/>
+    </node>
+</ndbx>

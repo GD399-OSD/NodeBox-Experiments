@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="4286100d-d7a5-48ac-9686-17410f1e9e3f">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="colorize1" position="12.00,3.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+            <port name="stroke" type="color" value="#0000d6ff"/>
+        </node>
+        <node name="colorize2" position="-1.00,3.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#007ce4ff"/>
+        </node>
+        <node name="combine1" position="7.00,8.00" prototype="list.combine"/>
+        <node name="copy1" position="4.00,5.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="88"/>
+            <port name="order" type="string" value="srt"/>
+            <port name="translate" type="point" value="-15.00,0.00"/>
+            <port name="rotate" type="float" value="-49.0"/>
+        </node>
+        <node name="copy2" position="9.00,5.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="10"/>
+            <port name="order" type="string" value="rtr"/>
+            <port name="translate" type="point" value="6.00,0.00"/>
+            <port name="rotate" type="float" value="-31.0"/>
+            <port name="scale" type="point" value="10.00,10.00"/>
+        </node>
+        <node name="ellipse2" position="10.00,1.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="6.0"/>
+        </node>
+        <node name="grid2" position="14.00,-2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="35"/>
+            <port name="rows" type="int" value="11"/>
+            <port name="width" type="float" value="316.0"/>
+            <port name="height" type="float" value="460.0"/>
+        </node>
+        <node name="sample1" position="-3.00,-2.00" prototype="math.sample">
+            <port name="amount" type="int" value="8"/>
+            <port name="start" type="float" value="2.0"/>
+            <port name="end" type="float" value="2.0"/>
+        </node>
+        <node name="sample2" position="9.00,-2.00" prototype="math.sample">
+            <port name="amount" type="int" value="2"/>
+            <port name="end" type="float" value="3.0"/>
+        </node>
+        <node name="textpath1" position="-2.00,1.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="Node Boxer"/>
+            <port name="font_name" type="string" value="VesperLibre-Heavy"/>
+            <port name="font_size" type="float" value="29.0"/>
+            <port name="position" type="point" value="-24.00,0.00"/>
+            <port name="width" type="float" value="14.0"/>
+        </node>
+        <node name="translate1" position="4.00,3.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="3.00,0.00"/>
+        </node>
+        <node name="translate2" position="16.00,3.00" prototype="corevector.translate"/>
+        <conn input="copy1.shape" output="translate1"/>
+        <conn input="translate2.translate" output="ellipse2"/>
+        <conn input="ellipse2.width" output="sample2"/>
+        <conn input="ellipse2.position" output="grid2"/>
+        <conn input="ellipse2.height" output="sample2"/>
+        <conn input="copy2.shape" output="translate2"/>
+        <conn input="combine1.list1" output="copy1"/>
+        <conn input="combine1.list2" output="copy2"/>
+        <conn input="colorize1.shape" output="ellipse2"/>
+        <conn input="translate2.shape" output="colorize1"/>
+        <conn input="translate1.shape" output="colorize2"/>
+        <conn input="colorize2.shape" output="textpath1"/>
+        <conn input="textpath1.align" output="sample1"/>
+    </node>
+</ndbx>
