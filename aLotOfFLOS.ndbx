@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="7e8c269c-e456-4102-8116-0d83e4b31180">
+    <property name="canvasHeight" value="1080"/>
+    <property name="canvasWidth" value="1920"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="colorize1">
+        <node name="color1" position="9.00,2.00" prototype="color.color">
+            <port name="color" type="color" value="#96963eff"/>
+        </node>
+        <node name="color2" position="10.00,3.00" prototype="color.color">
+            <port name="color" type="color" value="#6573b1ff"/>
+        </node>
+        <node name="color3" position="11.00,4.00" prototype="color.color">
+            <port name="color" type="color" value="#639c96ff"/>
+        </node>
+        <node name="color4" position="12.00,5.00" prototype="color.color">
+            <port name="color" type="color" value="#9ac775ff"/>
+        </node>
+        <node name="color5" position="13.00,6.00" prototype="color.color">
+            <port name="color" type="color" value="#c38bcaff"/>
+        </node>
+        <node name="color6" position="14.00,7.00" prototype="color.color">
+            <port name="color" type="color" value="#767ac3ff"/>
+        </node>
+        <node name="colorize1" position="5.00,11.00" prototype="corevector.colorize">
+            <port name="strokeWidth" type="float" value="1.0"/>
+        </node>
+        <node name="combine1" position="10.00,9.00" prototype="list.combine"/>
+        <node name="combine2" position="6.00,2.00" prototype="list.combine"/>
+        <node name="divide1" position="1.00,1.00" prototype="math.divide">
+            <port name="value2" type="float" value="20.0"/>
+        </node>
+        <node name="divide2" position="1.00,3.00" prototype="math.divide">
+            <port name="value2" type="float" value="2.0"/>
+        </node>
+        <node name="frame1" position="-1.00,0.00" prototype="core.frame"/>
+        <node name="line1" position="5.00,9.00" prototype="corevector.line"/>
+        <node name="number1" position="8.00,-2.00" prototype="math.number">
+            <port name="value" type="float" value="259.0"/>
+        </node>
+        <node name="point1" position="5.00,5.00" prototype="corevector.point"/>
+        <node name="resample1" position="5.00,4.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+            <port name="length" type="float" value="1.0"/>
+            <port name="points" type="int" value="5000"/>
+        </node>
+        <node name="shift1" position="6.00,7.00" prototype="list.shift">
+            <port name="amount" type="int" value="100"/>
+        </node>
+        <node name="string1" position="5.00,-2.00" prototype="string.string">
+            <port name="value" type="string" value="Fruktur"/>
+        </node>
+        <node name="textpath1" position="5.00,0.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="A Lot Of"/>
+            <port name="font_name" type="string" value="Spectral-BoldItalic"/>
+            <port name="font_size" type="float" value="166.0"/>
+            <port name="position" type="point" value="-265.00,-55.00"/>
+        </node>
+        <node name="textpath2" position="8.00,0.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="F/LOSS"/>
+            <port name="position" type="point" value="158.00,164.00"/>
+        </node>
+        <node name="textpath3" position="11.00,0.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="So Messy!"/>
+            <port name="position" type="point" value="-98.00,375.00"/>
+        </node>
+        <node name="textpath4" position="14.00,0.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="Don’t Get To"/>
+            <port name="position" type="point" value="-312.00,595.00"/>
+        </node>
+        <node name="textpath5" position="17.00,0.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="Tangled Up!"/>
+            <port name="position" type="point" value="155.00,800.00"/>
+        </node>
+        <node name="translate1" position="16.00,2.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-1.00,31.00"/>
+        </node>
+        <node name="wave1" position="-1.00,4.00" prototype="math.wave">
+            <port name="min" type="float" value="1.0"/>
+            <port name="period" type="float" value="30.0"/>
+        </node>
+        <node name="wave2" position="-1.00,2.00" prototype="math.wave">
+            <port name="min" type="float" value="3.0"/>
+            <port name="max" type="float" value="2000.0"/>
+            <port name="period" type="float" value="120.0"/>
+        </node>
+        <conn input="point1.value" output="resample1"/>
+        <conn input="line1.point1" output="point1"/>
+        <conn input="shift1.list" output="point1"/>
+        <conn input="colorize1.shape" output="line1"/>
+        <conn input="combine1.list1" output="color1"/>
+        <conn input="combine1.list2" output="color2"/>
+        <conn input="combine1.list3" output="color3"/>
+        <conn input="textpath1.font_name" output="string1"/>
+        <conn input="line1.point2" output="shift1"/>
+        <conn input="shift1.amount" output="wave1"/>
+        <conn input="resample1.points" output="wave2"/>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="wave2.offset" output="divide1"/>
+        <conn input="divide2.value1" output="frame1"/>
+        <conn input="wave1.offset" output="divide2"/>
+        <conn input="combine2.list2" output="textpath2"/>
+        <conn input="combine2.list1" output="textpath1"/>
+        <conn input="textpath2.font_name" output="string1"/>
+        <conn input="textpath1.font_size" output="number1"/>
+        <conn input="textpath2.font_size" output="number1"/>
+        <conn input="translate1.shape" output="combine2"/>
+        <conn input="resample1.shape" output="translate1"/>
+        <conn input="combine1.list4" output="color4"/>
+        <conn input="combine1.list5" output="color5"/>
+        <conn input="combine1.list6" output="color6"/>
+        <conn input="textpath3.font_name" output="string1"/>
+        <conn input="textpath3.font_size" output="number1"/>
+        <conn input="combine2.list3" output="textpath3"/>
+        <conn input="textpath4.font_name" output="string1"/>
+        <conn input="textpath4.font_size" output="number1"/>
+        <conn input="combine2.list4" output="textpath4"/>
+        <conn input="textpath5.font_name" output="string1"/>
+        <conn input="textpath5.font_size" output="number1"/>
+        <conn input="combine2.list5" output="textpath5"/>
+    </node>
+</ndbx>
