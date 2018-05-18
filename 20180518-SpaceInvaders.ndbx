@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="956154fc-07b6-4c36-85db-294bcd2744db">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="Invader">
+        <node name="Invader" position="-1.00,2.00" prototype="core.network" renderedChild="translate1">
+            <node name="grid1" position="-3.00,-4.00" prototype="corevector.grid">
+                <port name="columns" type="int" value="6"/>
+                <port name="rows" type="int" value="8"/>
+                <port name="width" type="float" value="50.0"/>
+                <port name="height" type="float" value="70.0"/>
+                <port name="position" type="point" value="25.00,0.00"/>
+            </node>
+            <node name="pick1" position="-3.00,-3.00" prototype="list.pick">
+                <port name="amount" type="int" value="25"/>
+            </node>
+            <node name="rect1" position="-3.00,-2.00" prototype="corevector.rect">
+                <port name="width" type="float" value="10.0"/>
+                <port name="height" type="float" value="10.0"/>
+            </node>
+            <node name="reflect1" position="-3.00,-1.00" prototype="corevector.reflect">
+                <port name="angle" type="float" value="90.0"/>
+            </node>
+            <node name="translate1" position="-3.00,0.00" prototype="corevector.translate"/>
+            <port childReference="pick1.seed" description="The random variation." label="" name="seed" range="value" type="int" value="0" widget="int"/>
+            <port childReference="translate1.translate" description="The amount of translation." label="" name="position" range="value" type="point" value="0.00,0.00" widget="point"/>
+            <port childReference="pick1.amount" description="The amount of items to pick." label="" name="Whitespace" range="value" type="int" value="25" widget="int"/>
+            <conn input="pick1.list" output="grid1"/>
+            <conn input="rect1.position" output="pick1"/>
+            <conn input="reflect1.shape" output="rect1"/>
+            <conn input="translate1.shape" output="reflect1"/>
+        </node>
+        <node name="count1" position="1.00,-3.00" prototype="list.count"/>
+        <node name="grid1" position="-1.00,-5.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="9"/>
+            <port name="rows" type="int" value="12"/>
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="integer1" position="2.00,0.00" prototype="math.integer"/>
+        <node name="random_numbers1" position="-1.00,-1.00" prototype="math.random_numbers">
+            <port name="end" type="float" value="1000.0"/>
+        </node>
+        <node name="random_numbers2" position="2.00,-1.00" prototype="math.random_numbers">
+            <port name="start" type="float" value="17.0"/>
+            <port name="end" type="float" value="32.0"/>
+            <port name="seed" type="int" value="1"/>
+        </node>
+        <conn input="Invader.position" output="grid1"/>
+        <conn input="count1.list" output="grid1"/>
+        <conn input="random_numbers1.amount" output="count1"/>
+        <conn input="Invader.seed" output="random_numbers1"/>
+        <conn input="random_numbers2.amount" output="count1"/>
+        <conn input="integer1.value" output="random_numbers2"/>
+        <conn input="Invader.Whitespace" output="integer1"/>
+    </node>
+</ndbx>
