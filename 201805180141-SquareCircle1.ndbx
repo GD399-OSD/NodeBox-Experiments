@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="12060f74-0fb8-4000-a1d7-7459f185028b">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="combine1" position="3.00,4.00" prototype="list.combine"/>
+        <node name="ellipse1" position="4.00,1.00" prototype="corevector.ellipse"/>
+        <node name="grid1" position="1.00,-1.00" prototype="corevector.grid">
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="pick1" position="1.00,2.00" prototype="list.pick">
+            <port name="amount" type="int" value="50"/>
+        </node>
+        <node name="pick2" position="4.00,2.00" prototype="list.pick">
+            <port name="amount" type="int" value="50"/>
+            <port name="seed" type="int" value="1"/>
+        </node>
+        <node name="rect1" position="1.00,1.00" prototype="corevector.rect"/>
+        <conn input="rect1.position" output="grid1"/>
+        <conn input="ellipse1.position" output="grid1"/>
+        <conn input="pick1.list" output="rect1"/>
+        <conn input="combine1.list1" output="pick1"/>
+        <conn input="pick2.list" output="ellipse1"/>
+        <conn input="combine1.list2" output="pick2"/>
+    </node>
+</ndbx>

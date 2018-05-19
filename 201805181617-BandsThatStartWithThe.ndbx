@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="92811b4e-9fbc-4d1b-8197-e3104304e776">
+    <property name="canvasHeight" value="2750"/>
+    <property name="canvasWidth" value="1700"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="a" position="15.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="2"/>
+            <port name="size" type="int" value="13"/>
+        </node>
+        <node name="b" position="18.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="15"/>
+            <port name="size" type="int" value="30"/>
+        </node>
+        <node name="c" position="21.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="45"/>
+            <port name="size" type="int" value="19"/>
+        </node>
+        <node name="change_case1" position="10.00,-11.00" prototype="string.change_case"/>
+        <node name="colorize1" position="9.00,5.00" prototype="corevector.colorize"/>
+        <node name="colorize2" position="1.00,8.00" prototype="corevector.colorize">
+            <port name="strokeWidth" type="float" value="5.0"/>
+        </node>
+        <node name="combine1" position="7.00,10.00" prototype="list.combine"/>
+        <node name="combine2" position="12.00,0.00" prototype="list.combine"/>
+        <node name="combine3" position="9.00,3.00" prototype="list.combine"/>
+        <node name="combine4" position="15.00,0.00" prototype="list.combine"/>
+        <node name="combine5" position="18.00,0.00" prototype="list.combine"/>
+        <node name="combine6" position="21.00,0.00" prototype="list.combine"/>
+        <node name="copy1" position="9.00,-3.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="27"/>
+        </node>
+        <node name="d" position="24.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="64"/>
+            <port name="size" type="int" value="19"/>
+        </node>
+        <node name="distinct1" position="10.00,-10.00" prototype="list.distinct"/>
+        <node name="divide1" position="3.00,1.00" prototype="math.divide">
+            <port name="value2" type="float" value="16.0"/>
+        </node>
+        <node name="e" position="27.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="83"/>
+            <port name="size" type="int" value="9"/>
+        </node>
+        <node name="f" position="30.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="92"/>
+            <port name="size" type="int" value="14"/>
+        </node>
+        <node name="g" position="33.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="106"/>
+            <port name="size" type="int" value="26"/>
+        </node>
+        <node name="grid1" position="6.00,3.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="1"/>
+            <port name="position" type="point" value="-292.00,-17.00"/>
+        </node>
+        <node name="group1" position="12.00,-3.00" prototype="corevector.group"/>
+        <node name="group10" position="39.00,-3.00" prototype="corevector.group"/>
+        <node name="group11" position="48.00,-3.00" prototype="corevector.group"/>
+        <node name="group12" position="45.00,-3.00" prototype="corevector.group"/>
+        <node name="group13" position="36.00,-3.00" prototype="corevector.group"/>
+        <node name="group14" position="33.00,-3.00" prototype="corevector.group"/>
+        <node name="group15" position="69.00,-3.00" prototype="corevector.group"/>
+        <node name="group16" position="60.00,-3.00" prototype="corevector.group"/>
+        <node name="group17" position="72.00,-3.00" prototype="corevector.group"/>
+        <node name="group18" position="63.00,-3.00" prototype="corevector.group"/>
+        <node name="group19" position="57.00,-3.00" prototype="corevector.group"/>
+        <node name="group2" position="15.00,-3.00" prototype="corevector.group"/>
+        <node name="group20" position="66.00,-3.00" prototype="corevector.group"/>
+        <node name="group21" position="54.00,-3.00" prototype="corevector.group"/>
+        <node name="group22" position="87.00,-3.00" prototype="corevector.group"/>
+        <node name="group23" position="75.00,-3.00" prototype="corevector.group"/>
+        <node name="group25" position="81.00,-3.00" prototype="corevector.group"/>
+        <node name="group26" position="78.00,-3.00" prototype="corevector.group"/>
+        <node name="group27" position="84.00,-3.00" prototype="corevector.group"/>
+        <node name="group28" position="90.00,-3.00" prototype="corevector.group"/>
+        <node name="group3" position="18.00,-3.00" prototype="corevector.group"/>
+        <node name="group4" position="21.00,-3.00" prototype="corevector.group"/>
+        <node name="group5" position="24.00,-3.00" prototype="corevector.group"/>
+        <node name="group6" position="27.00,-3.00" prototype="corevector.group"/>
+        <node name="group7" position="30.00,-3.00" prototype="corevector.group"/>
+        <node name="group8" position="51.00,-3.00" prototype="corevector.group"/>
+        <node name="group9" position="42.00,-3.00" prototype="corevector.group"/>
+        <node name="h" position="36.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="132"/>
+            <port name="size" type="int" value="14"/>
+        </node>
+        <node name="hsb_color1" position="3.00,3.00" prototype="color.hsb_color">
+            <port name="hue" type="float" value="150.0"/>
+            <port name="saturation" type="float" value="250.0"/>
+            <port name="brightness" type="float" value="250.0"/>
+            <port name="alpha" type="float" value="10.0"/>
+        </node>
+        <node name="hsb_color2" position="3.00,6.00" prototype="color.hsb_color">
+            <port name="hue" type="float" value="150.0"/>
+            <port name="saturation" type="float" value="250.0"/>
+            <port name="brightness" type="float" value="250.0"/>
+        </node>
+        <node name="i" position="39.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="146"/>
+            <port name="size" type="int" value="4"/>
+        </node>
+        <node name="import_text1" position="10.00,-13.00" prototype="data.import_text">
+            <port name="file" type="string" value="BandNamesThatStartWithThe.txt"/>
+        </node>
+        <node name="integer1" position="11.00,-9.00" prototype="math.integer">
+            <port name="value" type="int" value="42"/>
+        </node>
+        <node name="integer2" position="6.00,-2.00" prototype="math.integer">
+            <port name="value" type="int" value="27"/>
+        </node>
+        <node name="integer3" position="3.00,0.00" prototype="math.integer">
+            <port name="value" type="int" value="255"/>
+        </node>
+        <node name="integer4" position="0.00,3.00" prototype="math.integer">
+            <port name="value" type="int" value="232"/>
+        </node>
+        <node name="j" position="42.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="150"/>
+        </node>
+        <node name="k" position="45.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="160"/>
+            <port name="size" type="int" value="6"/>
+        </node>
+        <node name="l" position="48.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="166"/>
+            <port name="size" type="int" value="20"/>
+        </node>
+        <node name="line1" position="0.00,7.00" prototype="corevector.line">
+            <port name="point1" type="point" value="-760.00,1200.00"/>
+            <port name="point2" type="point" value="760.00,1200.00"/>
+        </node>
+        <node name="m" position="51.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="186"/>
+            <port name="size" type="int" value="24"/>
+        </node>
+        <node name="multiply1" position="7.00,0.00" prototype="math.multiply">
+            <port name="value2" type="float" value="38.0"/>
+        </node>
+        <node name="n" position="54.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="210"/>
+            <port name="size" type="int" value="8"/>
+        </node>
+        <node name="numbers" position="12.00,-5.00" prototype="list.slice">
+            <port name="size" type="int" value="2"/>
+        </node>
+        <node name="o" position="57.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="218"/>
+            <port name="size" type="int" value="8"/>
+        </node>
+        <node name="p" position="60.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="226"/>
+            <port name="size" type="int" value="27"/>
+        </node>
+        <node name="q" position="63.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="253"/>
+            <port name="size" type="int" value="0"/>
+        </node>
+        <node name="r" position="66.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="253"/>
+            <port name="size" type="int" value="21"/>
+        </node>
+        <node name="s" position="69.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="274"/>
+            <port name="size" type="int" value="38"/>
+        </node>
+        <node name="scale1" position="9.00,7.00" prototype="corevector.scale"/>
+        <node name="string6" position="12.00,-8.00" prototype="string.string">
+            <port name="value" type="string" value="LeagueGothic-CondensedRegular"/>
+        </node>
+        <node name="sub_string1" position="10.00,-12.00" prototype="string.sub_string">
+            <port name="start" type="int" value="4"/>
+            <port name="end" type="int" value="478"/>
+        </node>
+        <node name="t" position="72.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="312"/>
+            <port name="size" type="int" value="14"/>
+        </node>
+        <node name="textpath10" position="51.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath11" position="48.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath12" position="45.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath13" position="42.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath14" position="39.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath15" position="36.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath16" position="33.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath17" position="69.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath18" position="66.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath19" position="72.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath2" position="9.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="THE"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="RIGHT"/>
+            <port name="position" type="point" value="-9.00,0.00"/>
+        </node>
+        <node name="textpath20" position="57.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath21" position="54.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath22" position="63.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath23" position="60.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath24" position="84.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath25" position="81.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath26" position="78.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath27" position="75.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath29" position="90.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath3" position="12.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath30" position="87.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath4" position="15.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath5" position="18.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath6" position="21.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath7" position="24.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath8" position="27.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="textpath9" position="30.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Alarmists"/>
+            <port name="font_name" type="string" value="CooperHewitt-Semibold"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <node name="translate1" position="9.00,6.00" prototype="corevector.translate"/>
+        <node name="u" position="75.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="326"/>
+            <port name="size" type="int" value="3"/>
+        </node>
+        <node name="v" position="78.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="329"/>
+            <port name="size" type="int" value="8"/>
+        </node>
+        <node name="w" position="81.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="337"/>
+            <port name="size" type="int" value="16"/>
+        </node>
+        <node name="x" position="84.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="353"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="y" position="87.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="354"/>
+            <port name="size" type="int" value="0"/>
+        </node>
+        <node name="z" position="90.00,-5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="354"/>
+            <port name="size" type="int" value="2"/>
+        </node>
+        <conn input="sub_string1.string" output="import_text1"/>
+        <conn input="copy1.shape" output="textpath2"/>
+        <conn input="translate1.shape" output="colorize1"/>
+        <conn input="textpath2.font_size" output="integer1"/>
+        <conn input="combine3.list1" output="copy1"/>
+        <conn input="textpath2.font_name" output="string6"/>
+        <conn input="copy1.copies" output="integer2"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="multiply1.value1" output="integer2"/>
+        <conn input="grid1.height" output="multiply1"/>
+        <conn input="divide1.value1" output="integer3"/>
+        <conn input="scale1.shape" output="translate1"/>
+        <conn input="scale1.scale" output="integer4"/>
+        <conn input="hsb_color1.alpha" output="divide1"/>
+        <conn input="textpath27.font_size" output="integer1"/>
+        <conn input="textpath26.font_size" output="integer1"/>
+        <conn input="group23.shapes" output="textpath27"/>
+        <conn input="group26.shapes" output="textpath26"/>
+        <conn input="textpath25.font_size" output="integer1"/>
+        <conn input="group25.shapes" output="textpath25"/>
+        <conn input="combine6.list1" output="group23"/>
+        <conn input="combine6.list2" output="group26"/>
+        <conn input="combine6.list3" output="group25"/>
+        <conn input="textpath24.font_size" output="integer1"/>
+        <conn input="group27.shapes" output="textpath24"/>
+        <conn input="textpath30.font_size" output="integer1"/>
+        <conn input="group22.shapes" output="textpath30"/>
+        <conn input="textpath29.font_size" output="integer1"/>
+        <conn input="group28.shapes" output="textpath29"/>
+        <conn input="combine6.list4" output="group27"/>
+        <conn input="combine6.list5" output="group22"/>
+        <conn input="combine6.list6" output="group28"/>
+        <conn input="textpath27.font_name" output="string6"/>
+        <conn input="textpath26.font_name" output="string6"/>
+        <conn input="textpath25.font_name" output="string6"/>
+        <conn input="textpath24.font_name" output="string6"/>
+        <conn input="textpath30.font_name" output="string6"/>
+        <conn input="textpath29.font_name" output="string6"/>
+        <conn input="u.list" output="distinct1"/>
+        <conn input="textpath27.text" output="u"/>
+        <conn input="textpath26.text" output="v"/>
+        <conn input="v.list" output="distinct1"/>
+        <conn input="textpath25.text" output="w"/>
+        <conn input="w.list" output="distinct1"/>
+        <conn input="textpath24.text" output="x"/>
+        <conn input="x.list" output="distinct1"/>
+        <conn input="textpath30.text" output="y"/>
+        <conn input="y.list" output="distinct1"/>
+        <conn input="textpath29.text" output="z"/>
+        <conn input="z.list" output="distinct1"/>
+        <conn input="combine3.list5" output="combine6"/>
+        <conn input="group21.shapes" output="textpath21"/>
+        <conn input="group19.shapes" output="textpath20"/>
+        <conn input="group16.shapes" output="textpath23"/>
+        <conn input="combine5.list1" output="group21"/>
+        <conn input="combine5.list2" output="group19"/>
+        <conn input="combine5.list3" output="group16"/>
+        <conn input="group18.shapes" output="textpath22"/>
+        <conn input="group20.shapes" output="textpath18"/>
+        <conn input="group15.shapes" output="textpath17"/>
+        <conn input="combine5.list4" output="group18"/>
+        <conn input="combine5.list5" output="group20"/>
+        <conn input="combine5.list6" output="group15"/>
+        <conn input="group17.shapes" output="textpath19"/>
+        <conn input="combine5.list7" output="group17"/>
+        <conn input="textpath21.text" output="n"/>
+        <conn input="textpath20.text" output="o"/>
+        <conn input="textpath23.text" output="p"/>
+        <conn input="textpath22.text" output="q"/>
+        <conn input="textpath18.text" output="r"/>
+        <conn input="textpath17.text" output="s"/>
+        <conn input="textpath19.text" output="t"/>
+        <conn input="textpath21.font_name" output="string6"/>
+        <conn input="textpath20.font_name" output="string6"/>
+        <conn input="textpath23.font_name" output="string6"/>
+        <conn input="textpath22.font_name" output="string6"/>
+        <conn input="textpath18.font_name" output="string6"/>
+        <conn input="textpath17.font_name" output="string6"/>
+        <conn input="textpath19.font_name" output="string6"/>
+        <conn input="textpath21.font_size" output="integer1"/>
+        <conn input="textpath20.font_size" output="integer1"/>
+        <conn input="textpath23.font_size" output="integer1"/>
+        <conn input="textpath22.font_size" output="integer1"/>
+        <conn input="textpath18.font_size" output="integer1"/>
+        <conn input="textpath17.font_size" output="integer1"/>
+        <conn input="textpath19.font_size" output="integer1"/>
+        <conn input="change_case1.string" output="sub_string1"/>
+        <conn input="distinct1.list" output="change_case1"/>
+        <conn input="n.list" output="distinct1"/>
+        <conn input="o.list" output="distinct1"/>
+        <conn input="p.list" output="distinct1"/>
+        <conn input="q.list" output="distinct1"/>
+        <conn input="r.list" output="distinct1"/>
+        <conn input="s.list" output="distinct1"/>
+        <conn input="t.list" output="distinct1"/>
+        <conn input="group14.shapes" output="textpath16"/>
+        <conn input="group13.shapes" output="textpath15"/>
+        <conn input="group10.shapes" output="textpath14"/>
+        <conn input="combine4.list1" output="group14"/>
+        <conn input="combine4.list2" output="group13"/>
+        <conn input="combine4.list3" output="group10"/>
+        <conn input="group9.shapes" output="textpath13"/>
+        <conn input="group12.shapes" output="textpath12"/>
+        <conn input="group11.shapes" output="textpath11"/>
+        <conn input="combine4.list4" output="group9"/>
+        <conn input="combine4.list5" output="group12"/>
+        <conn input="combine4.list6" output="group11"/>
+        <conn input="group8.shapes" output="textpath10"/>
+        <conn input="combine4.list7" output="group8"/>
+        <conn input="textpath16.text" output="g"/>
+        <conn input="textpath15.text" output="h"/>
+        <conn input="textpath14.text" output="i"/>
+        <conn input="textpath13.text" output="j"/>
+        <conn input="textpath12.text" output="k"/>
+        <conn input="textpath11.text" output="l"/>
+        <conn input="textpath10.text" output="m"/>
+        <conn input="combine3.list4" output="combine5"/>
+        <conn input="combine3.list3" output="combine4"/>
+        <conn input="textpath16.font_name" output="string6"/>
+        <conn input="textpath15.font_name" output="string6"/>
+        <conn input="textpath14.font_name" output="string6"/>
+        <conn input="textpath13.font_name" output="string6"/>
+        <conn input="textpath11.font_name" output="string6"/>
+        <conn input="textpath12.font_name" output="string6"/>
+        <conn input="textpath10.font_name" output="string6"/>
+        <conn input="textpath16.font_size" output="integer1"/>
+        <conn input="textpath15.font_size" output="integer1"/>
+        <conn input="textpath14.font_size" output="integer1"/>
+        <conn input="textpath13.font_size" output="integer1"/>
+        <conn input="textpath12.font_size" output="integer1"/>
+        <conn input="textpath11.font_size" output="integer1"/>
+        <conn input="textpath10.font_size" output="integer1"/>
+        <conn input="g.list" output="distinct1"/>
+        <conn input="h.list" output="distinct1"/>
+        <conn input="i.list" output="distinct1"/>
+        <conn input="j.list" output="distinct1"/>
+        <conn input="k.list" output="distinct1"/>
+        <conn input="l.list" output="distinct1"/>
+        <conn input="m.list" output="distinct1"/>
+        <conn input="textpath3.text" output="numbers"/>
+        <conn input="textpath4.text" output="a"/>
+        <conn input="group1.shapes" output="textpath3"/>
+        <conn input="group2.shapes" output="textpath4"/>
+        <conn input="group3.shapes" output="textpath5"/>
+        <conn input="combine2.list1" output="group1"/>
+        <conn input="combine2.list2" output="group2"/>
+        <conn input="combine2.list3" output="group3"/>
+        <conn input="textpath5.text" output="b"/>
+        <conn input="group4.shapes" output="textpath6"/>
+        <conn input="textpath6.text" output="c"/>
+        <conn input="group5.shapes" output="textpath7"/>
+        <conn input="textpath7.text" output="d"/>
+        <conn input="group6.shapes" output="textpath8"/>
+        <conn input="textpath8.text" output="e"/>
+        <conn input="combine2.list4" output="group4"/>
+        <conn input="combine2.list5" output="group5"/>
+        <conn input="combine2.list6" output="group6"/>
+        <conn input="group7.shapes" output="textpath9"/>
+        <conn input="textpath9.text" output="f"/>
+        <conn input="combine2.list7" output="group7"/>
+        <conn input="combine3.list2" output="combine2"/>
+        <conn input="textpath9.font_name" output="string6"/>
+        <conn input="textpath8.font_name" output="string6"/>
+        <conn input="textpath7.font_name" output="string6"/>
+        <conn input="textpath6.font_name" output="string6"/>
+        <conn input="textpath5.font_name" output="string6"/>
+        <conn input="textpath4.font_name" output="string6"/>
+        <conn input="textpath3.font_name" output="string6"/>
+        <conn input="f.list" output="distinct1"/>
+        <conn input="e.list" output="distinct1"/>
+        <conn input="d.list" output="distinct1"/>
+        <conn input="c.list" output="distinct1"/>
+        <conn input="b.list" output="distinct1"/>
+        <conn input="a.list" output="distinct1"/>
+        <conn input="numbers.list" output="distinct1"/>
+        <conn input="textpath9.font_size" output="integer1"/>
+        <conn input="textpath8.font_size" output="integer1"/>
+        <conn input="textpath7.font_size" output="integer1"/>
+        <conn input="textpath6.font_size" output="integer1"/>
+        <conn input="textpath5.font_size" output="integer1"/>
+        <conn input="textpath4.font_size" output="integer1"/>
+        <conn input="textpath3.font_size" output="integer1"/>
+        <conn input="colorize1.fill" output="hsb_color1"/>
+        <conn input="colorize1.shape" output="combine3"/>
+        <conn input="colorize2.shape" output="line1"/>
+        <conn input="combine1.list2" output="colorize2"/>
+        <conn input="colorize2.stroke" output="hsb_color2"/>
+        <conn input="grid1.rows" output="integer2"/>
+        <conn input="combine1.list1" output="scale1"/>
+    </node>
+</ndbx>
