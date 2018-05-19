@@ -27,14 +27,15 @@
             <port name="end" type="float" value="7.0"/>
         </node>
         <node name="scatter3" position="-2.00,3.00" prototype="corevector.scatter">
-            <port name="amount" type="int" value="870"/>
+            <port name="amount" type="int" value="1000"/>
         </node>
         <node name="textpath2" position="-2.00,1.00" prototype="corevector.textpath">
             <port name="text" type="string" value="OPEN SOURCERY"/>
-            <port name="font_name" type="string" value="LinLibertineOBI"/>
-            <port name="font_size" type="float" value="63.0"/>
+            <port name="font_name" type="string" value="FrizQuadrataStd"/>
+            <port name="font_size" type="float" value="104.0"/>
             <port name="align" type="string" value="LEFT"/>
-            <port name="width" type="float" value="337.0"/>
+            <port name="position" type="point" value="-256.00,0.00"/>
+            <port name="width" type="float" value="508.0"/>
         </node>
         <conn input="scatter3.shape" output="textpath2"/>
         <conn input="polygon1.position" output="scatter3"/>
