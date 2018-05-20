@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="9d7b6435-7fe0-4833-9073-336726702c6e">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="colorize2">
+        <node name="child_rect1" position="2.00,3.00" prototype="core.network" renderedChild="rotate1">
+            <node name="angle1" position="2.00,5.00" prototype="math.angle"/>
+            <node name="centroid1" position="5.00,2.00" prototype="corevector.centroid"/>
+            <node name="distance1" position="-4.00,5.00" prototype="math.distance"/>
+            <node name="distance2" position="-1.00,5.00" prototype="math.distance"/>
+            <node name="divide1" position="-8.00,6.00" prototype="math.divide">
+                <port name="value2" type="float" value="100.0"/>
+            </node>
+            <node name="first1" position="-4.00,2.00" prototype="list.first"/>
+            <node name="last1" position="2.00,2.00" prototype="list.last"/>
+            <node name="multiply1" position="-4.00,8.00" prototype="math.multiply">
+                <port name="value2" type="float" value="0.5"/>
+            </node>
+            <node name="multiply2" position="-1.00,8.00" prototype="math.multiply">
+                <port name="value2" type="float" value="0.5"/>
+            </node>
+            <node name="null1" position="-4.00,-4.00" prototype="corevector.null"/>
+            <node name="number1" position="-8.00,5.00" prototype="math.number">
+                <port name="value" type="float" value="88.0"/>
+            </node>
+            <node name="point1" position="-4.00,0.00" prototype="corevector.point"/>
+            <node name="rect2" position="5.00,11.00" prototype="corevector.rect"/>
+            <node name="rotate1" position="2.00,13.00" prototype="corevector.rotate"/>
+            <node name="second1" position="-1.00,2.00" prototype="list.second"/>
+            <port childReference="null1.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+            <port childReference="number1.value" description="" label="" name="Scale" range="value" type="float" value="88.0" widget="float"/>
+            <conn input="point1.value" output="null1"/>
+            <conn input="last1.list" output="point1"/>
+            <conn input="second1.list" output="point1"/>
+            <conn input="angle1.point1" output="last1"/>
+            <conn input="angle1.point2" output="second1"/>
+            <conn input="centroid1.shape" output="null1"/>
+            <conn input="rect2.width" output="multiply1"/>
+            <conn input="rect2.height" output="multiply2"/>
+            <conn input="rect2.position" output="centroid1"/>
+            <conn input="rotate1.shape" output="rect2"/>
+            <conn input="rotate1.angle" output="angle1"/>
+            <conn input="rotate1.origin" output="centroid1"/>
+            <conn input="divide1.value1" output="number1"/>
+            <conn input="multiply1.value2" output="divide1"/>
+            <conn input="multiply2.value2" output="divide1"/>
+            <conn input="first1.list" output="point1"/>
+            <conn input="distance1.point1" output="first1"/>
+            <conn input="distance1.point2" output="second1"/>
+            <conn input="distance2.point1" output="first1"/>
+            <conn input="distance2.point2" output="last1"/>
+            <conn input="multiply1.value1" output="distance1"/>
+            <conn input="multiply2.value1" output="distance2"/>
+        </node>
+        <node name="child_rect2" position="3.00,5.00" prototype="core.network" renderedChild="rotate1">
+            <node name="angle1" position="2.00,5.00" prototype="math.angle"/>
+            <node name="centroid1" position="5.00,2.00" prototype="corevector.centroid"/>
+            <node name="distance1" position="-4.00,5.00" prototype="math.distance"/>
+            <node name="distance2" position="-1.00,5.00" prototype="math.distance"/>
+            <node name="divide1" position="-8.00,6.00" prototype="math.divide">
+                <port name="value2" type="float" value="100.0"/>
+            </node>
+            <node name="first1" position="-4.00,2.00" prototype="list.first"/>
+            <node name="last1" position="2.00,2.00" prototype="list.last"/>
+            <node name="multiply1" position="-4.00,8.00" prototype="math.multiply">
+                <port name="value2" type="float" value="0.5"/>
+            </node>
+            <node name="multiply2" position="-1.00,8.00" prototype="math.multiply">
+                <port name="value2" type="float" value="0.5"/>
+            </node>
+            <node name="null1" position="-4.00,-4.00" prototype="corevector.null"/>
+            <node name="number1" position="-8.00,5.00" prototype="math.number">
+                <port name="value" type="float" value="88.0"/>
+            </node>
+            <node name="point1" position="-4.00,0.00" prototype="corevector.point"/>
+            <node name="rect2" position="5.00,11.00" prototype="corevector.rect"/>
+            <node name="rotate1" position="2.00,13.00" prototype="corevector.rotate"/>
+            <node name="second1" position="-1.00,2.00" prototype="list.second"/>
+            <port childReference="null1.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+            <port childReference="number1.value" description="" label="" name="Scale" range="value" type="float" value="88.0" widget="float"/>
+            <conn input="point1.value" output="null1"/>
+            <conn input="last1.list" output="point1"/>
+            <conn input="second1.list" output="point1"/>
+            <conn input="angle1.point1" output="last1"/>
+            <conn input="angle1.point2" output="second1"/>
+            <conn input="centroid1.shape" output="null1"/>
+            <conn input="rect2.width" output="multiply1"/>
+            <conn input="rect2.height" output="multiply2"/>
+            <conn input="rect2.position" output="centroid1"/>
+            <conn input="rotate1.shape" output="rect2"/>
+            <conn input="rotate1.angle" output="angle1"/>
+            <conn input="rotate1.origin" output="centroid1"/>
+            <conn input="divide1.value1" output="number1"/>
+            <conn input="multiply1.value2" output="divide1"/>
+            <conn input="multiply2.value2" output="divide1"/>
+            <conn input="first1.list" output="point1"/>
+            <conn input="distance1.point1" output="first1"/>
+            <conn input="distance1.point2" output="second1"/>
+            <conn input="distance2.point1" output="first1"/>
+            <conn input="distance2.point2" output="last1"/>
+            <conn input="multiply1.value1" output="distance1"/>
+            <conn input="multiply2.value1" output="distance2"/>
+        </node>
+        <node name="child_rect3" position="4.00,7.00" prototype="core.network" renderedChild="rotate1">
+            <node name="angle1" position="2.00,5.00" prototype="math.angle"/>
+            <node name="centroid1" position="5.00,2.00" prototype="corevector.centroid"/>
+            <node name="distance1" position="-4.00,5.00" prototype="math.distance"/>
+            <node name="distance2" position="-1.00,5.00" prototype="math.distance"/>
+            <node name="divide1" position="-8.00,6.00" prototype="math.divide">
+                <port name="value2" type="float" value="100.0"/>
+            </node>
+            <node name="first1" position="-4.00,2.00" prototype="list.first"/>
+            <node name="last1" position="2.00,2.00" prototype="list.last"/>
+            <node name="multiply1" position="-4.00,8.00" prototype="math.multiply">
+                <port name="value2" type="float" value="0.5"/>
+            </node>
+            <node name="multiply2" position="-1.00,8.00" prototype="math.multiply">
+                <port name="value2" type="float" value="0.5"/>
+            </node>
+            <node name="null1" position="-4.00,-4.00" prototype="corevector.null"/>
+            <node name="number1" position="-8.00,5.00" prototype="math.number">
+                <port name="value" type="float" value="88.0"/>
+            </node>
+            <node name="point1" position="-4.00,0.00" prototype="corevector.point"/>
+            <node name="rect2" position="5.00,11.00" prototype="corevector.rect"/>
+            <node name="rotate1" position="2.00,13.00" prototype="corevector.rotate"/>
+            <node name="second1" position="-1.00,2.00" prototype="list.second"/>
+            <port childReference="null1.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+            <port childReference="number1.value" description="" label="" name="Scale" range="value" type="float" value="88.0" widget="float"/>
+            <conn input="point1.value" output="null1"/>
+            <conn input="last1.list" output="point1"/>
+            <conn input="second1.list" output="point1"/>
+            <conn input="angle1.point1" output="last1"/>
+            <conn input="angle1.point2" output="second1"/>
+            <conn input="centroid1.shape" output="null1"/>
+            <conn input="rect2.width" output="multiply1"/>
+            <conn input="rect2.height" output="multiply2"/>
+            <conn input="rect2.position" output="centroid1"/>
+            <conn input="rotate1.shape" output="rect2"/>
+            <conn input="rotate1.angle" output="angle1"/>
+            <conn input="rotate1.origin" output="centroid1"/>
+            <conn input="divide1.value1" output="number1"/>
+            <conn input="multiply1.value2" output="divide1"/>
+            <conn input="multiply2.value2" output="divide1"/>
+            <conn input="first1.list" output="point1"/>
+            <conn input="distance1.point1" output="first1"/>
+            <conn input="distance1.point2" output="second1"/>
+            <conn input="distance2.point1" output="first1"/>
+            <conn input="distance2.point2" output="last1"/>
+            <conn input="multiply1.value1" output="distance1"/>
+            <conn input="multiply2.value1" output="distance2"/>
+        </node>
+        <node name="child_rect4" position="5.00,9.00" prototype="core.network" renderedChild="rotate1">
+            <node name="angle1" position="2.00,5.00" prototype="math.angle"/>
+            <node name="centroid1" position="5.00,2.00" prototype="corevector.centroid"/>
+            <node name="distance1" position="-4.00,5.00" prototype="math.distance"/>
+            <node name="distance2" position="-1.00,5.00" prototype="math.distance"/>
+            <node name="divide1" position="-8.00,6.00" prototype="math.divide">
+                <port name="value2" type="float" value="100.0"/>
+            </node>
+            <node name="first1" position="-4.00,2.00" prototype="list.first"/>
+            <node name="last1" position="2.00,2.00" prototype="list.last"/>
+            <node name="multiply1" position="-4.00,8.00" prototype="math.multiply">
+                <port name="value2" type="float" value="0.5"/>
+            </node>
+            <node name="multiply2" position="-1.00,8.00" prototype="math.multiply">
+                <port name="value2" type="float" value="0.5"/>
+            </node>
+            <node name="null1" position="-4.00,-4.00" prototype="corevector.null"/>
+            <node name="number1" position="-8.00,5.00" prototype="math.number">
+                <port name="value" type="float" value="88.0"/>
+            </node>
+            <node name="point1" position="-4.00,0.00" prototype="corevector.point"/>
+            <node name="rect2" position="5.00,11.00" prototype="corevector.rect"/>
+            <node name="rotate1" position="2.00,13.00" prototype="corevector.rotate"/>
+            <node name="second1" position="-1.00,2.00" prototype="list.second"/>
+            <port childReference="null1.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+            <port childReference="number1.value" description="" label="" name="Scale" range="value" type="float" value="88.0" widget="float"/>
+            <conn input="point1.value" output="null1"/>
+            <conn input="last1.list" output="point1"/>
+            <conn input="second1.list" output="point1"/>
+            <conn input="angle1.point1" output="last1"/>
+            <conn input="angle1.point2" output="second1"/>
+            <conn input="centroid1.shape" output="null1"/>
+            <conn input="rect2.width" output="multiply1"/>
+            <conn input="rect2.height" output="multiply2"/>
+            <conn input="rect2.position" output="centroid1"/>
+            <conn input="rotate1.shape" output="rect2"/>
+            <conn input="rotate1.angle" output="angle1"/>
+            <conn input="rotate1.origin" output="centroid1"/>
+            <conn input="divide1.value1" output="number1"/>
+            <conn input="multiply1.value2" output="divide1"/>
+            <conn input="multiply2.value2" output="divide1"/>
+            <conn input="first1.list" output="point1"/>
+            <conn input="distance1.point1" output="first1"/>
+            <conn input="distance1.point2" output="second1"/>
+            <conn input="distance2.point1" output="first1"/>
+            <conn input="distance2.point2" output="last1"/>
+            <conn input="multiply1.value1" output="distance1"/>
+            <conn input="multiply2.value1" output="distance2"/>
+        </node>
+        <node name="child_rect5" position="6.00,11.00" prototype="core.network" renderedChild="rotate1">
+            <node name="angle1" position="2.00,5.00" prototype="math.angle"/>
+            <node name="centroid1" position="5.00,2.00" prototype="corevector.centroid"/>
+            <node name="distance1" position="-4.00,5.00" prototype="math.distance"/>
+            <node name="distance2" position="-1.00,5.00" prototype="math.distance"/>
+            <node name="divide1" position="-8.00,6.00" prototype="math.divide">
+                <port name="value2" type="float" value="100.0"/>
+            </node>
+            <node name="first1" position="-4.00,2.00" prototype="list.first"/>
+            <node name="last1" position="2.00,2.00" prototype="list.last"/>
+            <node name="multiply1" position="-4.00,8.00" prototype="math.multiply">
+                <port name="value2" type="float" value="0.5"/>
+            </node>
+            <node name="multiply2" position="-1.00,8.00" prototype="math.multiply">
+                <port name="value2" type="float" value="0.5"/>
+            </node>
+            <node name="null1" position="-4.00,-4.00" prototype="corevector.null"/>
+            <node name="number1" position="-8.00,5.00" prototype="math.number">
+                <port name="value" type="float" value="88.0"/>
+            </node>
+            <node name="point1" position="-4.00,0.00" prototype="corevector.point"/>
+            <node name="rect2" position="5.00,11.00" prototype="corevector.rect"/>
+            <node name="rotate1" position="2.00,13.00" prototype="corevector.rotate"/>
+            <node name="second1" position="-1.00,2.00" prototype="list.second"/>
+            <port childReference="null1.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+            <port childReference="number1.value" description="" label="" name="Scale" range="value" type="float" value="88.0" widget="float"/>
+            <conn input="point1.value" output="null1"/>
+            <conn input="last1.list" output="point1"/>
+            <conn input="second1.list" output="point1"/>
+            <conn input="angle1.point1" output="last1"/>
+            <conn input="angle1.point2" output="second1"/>
+            <conn input="centroid1.shape" output="null1"/>
+            <conn input="rect2.width" output="multiply1"/>
+            <conn input="rect2.height" output="multiply2"/>
+            <conn input="rect2.position" output="centroid1"/>
+            <conn input="rotate1.shape" output="rect2"/>
+            <conn input="rotate1.angle" output="angle1"/>
+            <conn input="rotate1.origin" output="centroid1"/>
+            <conn input="divide1.value1" output="number1"/>
+            <conn input="multiply1.value2" output="divide1"/>
+            <conn input="multiply2.value2" output="divide1"/>
+            <conn input="first1.list" output="point1"/>
+            <conn input="distance1.point1" output="first1"/>
+            <conn input="distance1.point2" output="second1"/>
+            <conn input="distance2.point1" output="first1"/>
+            <conn input="distance2.point2" output="last1"/>
+            <conn input="multiply1.value1" output="distance1"/>
+            <conn input="multiply2.value1" output="distance2"/>
+        </node>
+        <node name="child_rect6" position="7.00,13.00" prototype="core.network" renderedChild="rotate1">
+            <node name="angle1" position="2.00,5.00" prototype="math.angle"/>
+            <node name="centroid1" position="5.00,2.00" prototype="corevector.centroid"/>
+            <node name="distance1" position="-4.00,5.00" prototype="math.distance"/>
+            <node name="distance2" position="-1.00,5.00" prototype="math.distance"/>
+            <node name="divide1" position="-8.00,6.00" prototype="math.divide">
+                <port name="value2" type="float" value="100.0"/>
+            </node>
+            <node name="first1" position="-4.00,2.00" prototype="list.first"/>
+            <node name="last1" position="2.00,2.00" prototype="list.last"/>
+            <node name="multiply1" position="-4.00,8.00" prototype="math.multiply">
+                <port name="value2" type="float" value="0.5"/>
+            </node>
+            <node name="multiply2" position="-1.00,8.00" prototype="math.multiply">
+                <port name="value2" type="float" value="0.5"/>
+            </node>
+            <node name="null1" position="-4.00,-4.00" prototype="corevector.null"/>
+            <node name="number1" position="-8.00,5.00" prototype="math.number">
+                <port name="value" type="float" value="88.0"/>
+            </node>
+            <node name="point1" position="-4.00,0.00" prototype="corevector.point"/>
+            <node name="rect2" position="5.00,11.00" prototype="corevector.rect"/>
+            <node name="rotate1" position="2.00,13.00" prototype="corevector.rotate"/>
+            <node name="second1" position="-1.00,2.00" prototype="list.second"/>
+            <port childReference="null1.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+            <port childReference="number1.value" description="" label="" name="Scale" range="value" type="float" value="88.0" widget="float"/>
+            <conn input="point1.value" output="null1"/>
+            <conn input="last1.list" output="point1"/>
+            <conn input="second1.list" output="point1"/>
+            <conn input="angle1.point1" output="last1"/>
+            <conn input="angle1.point2" output="second1"/>
+            <conn input="centroid1.shape" output="null1"/>
+            <conn input="rect2.width" output="multiply1"/>
+            <conn input="rect2.height" output="multiply2"/>
+            <conn input="rect2.position" output="centroid1"/>
+            <conn input="rotate1.shape" output="rect2"/>
+            <conn input="rotate1.angle" output="angle1"/>
+            <conn input="rotate1.origin" output="centroid1"/>
+            <conn input="divide1.value1" output="number1"/>
+            <conn input="multiply1.value2" output="divide1"/>
+            <conn input="multiply2.value2" output="divide1"/>
+            <conn input="first1.list" output="point1"/>
+            <conn input="distance1.point1" output="first1"/>
+            <conn input="distance1.point2" output="second1"/>
+            <conn input="distance2.point1" output="first1"/>
+            <conn input="distance2.point2" output="last1"/>
+            <conn input="multiply1.value1" output="distance1"/>
+            <conn input="multiply2.value1" output="distance2"/>
+        </node>
+        <node name="colorize2" position="1.00,20.00" prototype="corevector.colorize">
+            <port name="strokeWidth" type="float" value="2.0"/>
+        </node>
+        <node name="combine1" position="1.00,15.00" prototype="list.combine"/>
+        <node name="hsb_color1" position="2.00,18.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="255.0"/>
+            <port name="brightness" type="float" value="255.0"/>
+            <port name="alpha" type="float" value="127.0"/>
+        </node>
+        <node name="range1" position="2.00,17.00" prototype="math.range">
+            <port name="end" type="float" value="255.0"/>
+            <port name="step" type="float" value="40.0"/>
+        </node>
+        <node name="rect1" position="1.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1200.0"/>
+            <port name="height" type="float" value="400.0"/>
+        </node>
+        <conn input="colorize2.shape" output="combine1"/>
+        <conn input="colorize2.fill" output="hsb_color1"/>
+        <conn input="combine1.list1" output="rect1"/>
+        <conn input="child_rect1.shape" output="rect1"/>
+        <conn input="combine1.list2" output="child_rect1"/>
+        <conn input="child_rect2.shape" output="child_rect1"/>
+        <conn input="child_rect3.shape" output="child_rect2"/>
+        <conn input="child_rect4.shape" output="child_rect3"/>
+        <conn input="child_rect5.shape" output="child_rect4"/>
+        <conn input="child_rect6.shape" output="child_rect5"/>
+        <conn input="combine1.list3" output="child_rect2"/>
+        <conn input="combine1.list4" output="child_rect3"/>
+        <conn input="combine1.list5" output="child_rect4"/>
+        <conn input="combine1.list6" output="child_rect5"/>
+        <conn input="combine1.list7" output="child_rect6"/>
+        <conn input="hsb_color1.hue" output="range1"/>
+    </node>
+</ndbx>
