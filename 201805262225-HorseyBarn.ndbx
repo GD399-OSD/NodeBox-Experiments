@@ -4,18 +4,41 @@
     <property name="canvasWidth" value="850"/>
     <property name="canvasX" value="0"/>
     <property name="canvasY" value="0"/>
-    <node name="root" prototype="core.network" renderedChild="combine1">
+    <node name="root" prototype="core.network" renderedChild="combine2">
         <node name="characters1" position="0.00,0.00" prototype="string.characters"/>
         <node name="characters2" position="13.00,0.00" prototype="string.characters"/>
+        <node name="color1" position="10.00,0.00" prototype="color.color">
+            <port name="color" type="color" value="#ea5613ff"/>
+        </node>
+        <node name="color2" position="12.00,6.00" prototype="color.color">
+            <port name="color" type="color" value="#5bc62dff"/>
+        </node>
+        <node name="color3" position="11.00,9.00" prototype="color.color">
+            <port name="color" type="color" value="#6b4cb8ff"/>
+        </node>
         <node name="colorize1" position="9.00,3.00" prototype="corevector.colorize">
             <port name="fill" type="color" value="#00000000"/>
-            <port name="strokeWidth" type="float" value="1.0"/>
+            <port name="strokeWidth" type="float" value="3.0"/>
         </node>
         <node name="colorize2" position="22.00,3.00" prototype="corevector.colorize">
             <port name="fill" type="color" value="#00000000"/>
-            <port name="strokeWidth" type="float" value="1.0"/>
+            <port name="strokeWidth" type="float" value="3.0"/>
         </node>
-        <node name="combine1" position="4.00,10.00" prototype="list.combine"/>
+        <node name="colorize3" position="14.00,4.00" prototype="corevector.colorize"/>
+        <node name="colorize4" position="1.00,4.00" prototype="corevector.colorize"/>
+        <node name="colorize5" position="7.00,10.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="1.5"/>
+        </node>
+        <node name="colorize6" position="20.00,10.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="1.5"/>
+        </node>
+        <node name="colorize7" position="-1.00,12.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#f5f5f5ff"/>
+        </node>
+        <node name="combine1" position="7.00,13.00" prototype="list.combine"/>
+        <node name="combine2" position="7.00,16.00" prototype="list.combine"/>
         <node name="connect1" position="6.00,8.00" prototype="corevector.connect">
             <port name="closed" type="boolean" value="false"/>
         </node>
@@ -25,10 +48,10 @@
         <node name="count1" position="3.00,1.00" prototype="list.count"/>
         <node name="count2" position="16.00,1.00" prototype="list.count"/>
         <node name="import_svg1" position="5.00,-2.00" prototype="corevector.import_svg">
-            <port name="file" type="string" value="/Users/bjornmeansbear/Desktop/noun_225520.svg"/>
+            <port name="file" type="string" value="reference/noun_225520.svg"/>
         </node>
         <node name="import_svg2" position="18.00,-2.00" prototype="corevector.import_svg">
-            <port name="file" type="string" value="/Users/bjornmeansbear/Desktop/noun_1559535.svg"/>
+            <port name="file" type="string" value="reference/noun_1559535.svg"/>
         </node>
         <node name="integer1" position="9.00,-2.00" prototype="math.integer">
             <port name="value" type="int" value="3184"/>
@@ -38,6 +61,10 @@
         </node>
         <node name="point1" position="5.00,4.00" prototype="corevector.point"/>
         <node name="point2" position="18.00,4.00" prototype="corevector.point"/>
+        <node name="rect1" position="-1.00,11.00" prototype="corevector.rect">
+            <port name="width" type="float" value="850.0"/>
+            <port name="height" type="float" value="1100.0"/>
+        </node>
         <node name="resample1" position="5.00,3.00" prototype="corevector.resample">
             <port name="method" type="string" value="amount"/>
         </node>
@@ -61,20 +88,20 @@
             <port name="amount" type="int" value="-1"/>
         </node>
         <node name="string1" position="0.00,-2.00" prototype="string.string">
-            <port name="value" type="string" value="Horsey"/>
+            <port name="value" type="string" value="Race Horse"/>
         </node>
         <node name="string2" position="13.00,-2.00" prototype="string.string">
-            <port name="value" type="string" value="BARN"/>
+            <port name="value" type="string" value="IN A RED BARN"/>
         </node>
         <node name="textpath1" position="0.00,2.00" prototype="corevector.textpath">
             <port name="font_name" type="string" value="Orwellian-Regular"/>
             <port name="font_size" type="float" value="117.0"/>
-            <port name="position" type="point" value="0.00,-20.00"/>
+            <port name="position" type="point" value="30.00,-20.00"/>
         </node>
         <node name="textpath2" position="13.00,2.00" prototype="corevector.textpath">
             <port name="font_name" type="string" value="CooperHewitt-Thin"/>
             <port name="font_size" type="float" value="117.0"/>
-            <port name="position" type="point" value="0.00,-20.00"/>
+            <port name="position" type="point" value="-32.00,-20.00"/>
         </node>
         <node name="translate1" position="2.00,8.00" prototype="corevector.translate"/>
         <node name="translate2" position="15.00,8.00" prototype="corevector.translate"/>
@@ -86,15 +113,11 @@
         <conn input="resample1.shape" output="scale1"/>
         <conn input="point1.value" output="resample1"/>
         <conn input="textpath1.text" output="characters1"/>
-        <conn input="translate1.shape" output="textpath1"/>
         <conn input="reverse1.list" output="point1"/>
         <conn input="shift1.list" output="reverse1"/>
         <conn input="translate1.translate" output="shift1"/>
         <conn input="colorize1.shape" output="scale1"/>
         <conn input="connect1.points" output="shift1"/>
-        <conn input="combine1.list7" output="colorize1"/>
-        <conn input="combine1.list2" output="translate1"/>
-        <conn input="combine1.list1" output="connect1"/>
         <conn input="characters2.string" output="string2"/>
         <conn input="scale2.shape" output="import_svg2"/>
         <conn input="scale2.scale" output="integer2"/>
@@ -103,14 +126,31 @@
         <conn input="resample2.shape" output="scale2"/>
         <conn input="point2.value" output="resample2"/>
         <conn input="textpath2.text" output="characters2"/>
-        <conn input="translate2.shape" output="textpath2"/>
         <conn input="reverse2.list" output="point2"/>
         <conn input="shift2.list" output="reverse2"/>
         <conn input="translate2.translate" output="shift2"/>
         <conn input="colorize2.shape" output="scale2"/>
         <conn input="connect2.points" output="shift2"/>
-        <conn input="combine1.list3" output="translate2"/>
-        <conn input="combine1.list4" output="connect2"/>
-        <conn input="combine1.list6" output="colorize2"/>
+        <conn input="colorize1.stroke" output="color1"/>
+        <conn input="colorize3.shape" output="textpath2"/>
+        <conn input="translate2.shape" output="colorize3"/>
+        <conn input="colorize3.fill" output="color1"/>
+        <conn input="colorize4.shape" output="textpath1"/>
+        <conn input="translate1.shape" output="colorize4"/>
+        <conn input="colorize4.fill" output="color2"/>
+        <conn input="colorize2.stroke" output="color2"/>
+        <conn input="combine1.list5" output="translate1"/>
+        <conn input="combine1.list4" output="colorize1"/>
+        <conn input="colorize5.shape" output="connect1"/>
+        <conn input="combine1.list6" output="translate2"/>
+        <conn input="combine1.list3" output="colorize2"/>
+        <conn input="colorize5.stroke" output="color3"/>
+        <conn input="combine1.list2" output="colorize5"/>
+        <conn input="colorize6.stroke" output="color3"/>
+        <conn input="colorize6.shape" output="connect2"/>
+        <conn input="combine1.list1" output="colorize6"/>
+        <conn input="colorize7.shape" output="rect1"/>
+        <conn input="combine2.list1" output="colorize7"/>
+        <conn input="combine2.list2" output="combine1"/>
     </node>
 </ndbx>
