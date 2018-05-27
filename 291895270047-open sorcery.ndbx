@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="28a9a535-30b1-4225-ac85-40c5fd5f107c">
+    <property name="canvasHeight" value="1080"/>
+    <property name="canvasWidth" value="1920"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="combine1" position="2.00,7.00" prototype="list.combine"/>
+        <node name="integer1" position="-5.00,0.00" prototype="math.integer">
+            <port name="value" type="int" value="134"/>
+        </node>
+        <node name="line1" position="2.00,5.00" prototype="corevector.line"/>
+        <node name="point1" position="0.00,3.00" prototype="corevector.point"/>
+        <node name="point2" position="4.00,3.00" prototype="corevector.point"/>
+        <node name="resample1" position="0.00,2.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+        </node>
+        <node name="resample2" position="4.00,2.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+        </node>
+        <node name="textpath1" position="4.00,0.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="Open Sorcery"/>
+            <port name="font_name" type="string" value="LibreFranklin-Black"/>
+            <port name="font_size" type="float" value="150.0"/>
+            <port name="align" type="string" value="RIGHT"/>
+            <port name="position" type="point" value="799.00,239.00"/>
+            <port name="width" type="float" value="687.0"/>
+        </node>
+        <node name="textpath2" position="0.00,0.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="Open Sorcery"/>
+            <port name="font_name" type="string" value="Fruktur-Regular"/>
+            <port name="font_size" type="float" value="153.0"/>
+            <port name="align" type="string" value="LEFT"/>
+            <port name="position" type="point" value="-843.00,-289.00"/>
+            <port name="width" type="float" value="542.0"/>
+        </node>
+        <conn input="resample1.shape" output="textpath2"/>
+        <conn input="resample2.shape" output="textpath1"/>
+        <conn input="resample1.points" output="integer1"/>
+        <conn input="resample2.points" output="integer1"/>
+        <conn input="point1.value" output="resample1"/>
+        <conn input="point2.value" output="resample2"/>
+        <conn input="line1.point1" output="point1"/>
+        <conn input="line1.point2" output="point2"/>
+        <conn input="combine1.list3" output="line1"/>
+        <conn input="combine1.list4" output="textpath2"/>
+        <conn input="combine1.list5" output="textpath1"/>
+    </node>
+</ndbx>

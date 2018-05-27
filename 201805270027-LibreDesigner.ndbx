@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="00a36f32-28d7-416d-9cab-58412b904837">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="characters1" position="8.00,1.00" prototype="string.characters">
+            <port name="string" type="string" value="Thoughts on Open Source as Visual Design Ideology"/>
+        </node>
+        <node name="combine1" position="6.00,10.00" prototype="list.combine"/>
+        <node name="ellipse1" position="4.00,1.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="500.0"/>
+            <port name="height" type="float" value="500.0"/>
+        </node>
+        <node name="line1" position="4.00,7.00" prototype="corevector.line"/>
+        <node name="point1" position="4.00,4.00" prototype="corevector.point"/>
+        <node name="resample1" position="4.00,3.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+            <port name="points" type="int" value="50"/>
+        </node>
+        <node name="shift1" position="5.00,5.00" prototype="list.shift">
+            <port name="amount" type="int" value="7"/>
+        </node>
+        <node name="string1" position="12.00,1.00" prototype="string.string">
+            <port name="value" type="string" value="Thoughts on Open Source as Visual Design Ideology"/>
+        </node>
+        <node name="textpath1" position="10.00,4.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="CormorantGaramond-Bold"/>
+        </node>
+        <node name="translate1" position="9.00,7.00" prototype="corevector.translate"/>
+        <node name="trim1" position="12.00,2.00" prototype="string.trim"/>
+        <conn input="resample1.shape" output="ellipse1"/>
+        <conn input="point1.value" output="resample1"/>
+        <conn input="line1.point1" output="point1"/>
+        <conn input="line1.point2" output="shift1"/>
+        <conn input="shift1.list" output="point1"/>
+        <conn input="translate1.translate" output="point1"/>
+        <conn input="translate1.shape" output="textpath1"/>
+        <conn input="combine1.list1" output="line1"/>
+        <conn input="combine1.list2" output="translate1"/>
+        <conn input="trim1.string" output="string1"/>
+        <conn input="textpath1.text" output="trim1"/>
+    </node>
+</ndbx>
