@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="c7041cf0-81e1-4c7f-b613-7fe8cc76b79a">
+    <property name="canvasHeight" value="1100"/>
+    <property name="canvasWidth" value="850"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="characters1" position="0.00,0.00" prototype="string.characters"/>
+        <node name="characters2" position="13.00,0.00" prototype="string.characters"/>
+        <node name="colorize1" position="9.00,3.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="1.0"/>
+        </node>
+        <node name="colorize2" position="22.00,3.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="1.0"/>
+        </node>
+        <node name="combine1" position="4.00,10.00" prototype="list.combine"/>
+        <node name="connect1" position="6.00,8.00" prototype="corevector.connect">
+            <port name="closed" type="boolean" value="false"/>
+        </node>
+        <node name="connect2" position="19.00,8.00" prototype="corevector.connect">
+            <port name="closed" type="boolean" value="false"/>
+        </node>
+        <node name="count1" position="3.00,1.00" prototype="list.count"/>
+        <node name="count2" position="16.00,1.00" prototype="list.count"/>
+        <node name="import_svg1" position="5.00,-2.00" prototype="corevector.import_svg">
+            <port name="file" type="string" value="/Users/bjornmeansbear/Desktop/noun_225520.svg"/>
+        </node>
+        <node name="import_svg2" position="18.00,-2.00" prototype="corevector.import_svg">
+            <port name="file" type="string" value="/Users/bjornmeansbear/Desktop/noun_1559535.svg"/>
+        </node>
+        <node name="integer1" position="9.00,-2.00" prototype="math.integer">
+            <port name="value" type="int" value="3184"/>
+        </node>
+        <node name="integer2" position="22.00,-2.00" prototype="math.integer">
+            <port name="value" type="int" value="813"/>
+        </node>
+        <node name="point1" position="5.00,4.00" prototype="corevector.point"/>
+        <node name="point2" position="18.00,4.00" prototype="corevector.point"/>
+        <node name="resample1" position="5.00,3.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+        </node>
+        <node name="resample2" position="18.00,3.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+        </node>
+        <node name="reverse1" position="5.00,5.00" prototype="list.reverse"/>
+        <node name="reverse2" position="18.00,5.00" prototype="list.reverse"/>
+        <node name="scale1" position="5.00,0.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="1111.00,1111.00"/>
+            <port name="origin" type="point" value="0.00,5.00"/>
+        </node>
+        <node name="scale2" position="18.00,0.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="1111.00,1111.00"/>
+            <port name="origin" type="point" value="0.00,-18.00"/>
+        </node>
+        <node name="shift1" position="5.00,6.00" prototype="list.shift">
+            <port name="amount" type="int" value="-1"/>
+        </node>
+        <node name="shift2" position="18.00,6.00" prototype="list.shift">
+            <port name="amount" type="int" value="-1"/>
+        </node>
+        <node name="string1" position="0.00,-2.00" prototype="string.string">
+            <port name="value" type="string" value="Horsey"/>
+        </node>
+        <node name="string2" position="13.00,-2.00" prototype="string.string">
+            <port name="value" type="string" value="BARN"/>
+        </node>
+        <node name="textpath1" position="0.00,2.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="Orwellian-Regular"/>
+            <port name="font_size" type="float" value="117.0"/>
+            <port name="position" type="point" value="0.00,-20.00"/>
+        </node>
+        <node name="textpath2" position="13.00,2.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="CooperHewitt-Thin"/>
+            <port name="font_size" type="float" value="117.0"/>
+            <port name="position" type="point" value="0.00,-20.00"/>
+        </node>
+        <node name="translate1" position="2.00,8.00" prototype="corevector.translate"/>
+        <node name="translate2" position="15.00,8.00" prototype="corevector.translate"/>
+        <conn input="characters1.string" output="string1"/>
+        <conn input="scale1.shape" output="import_svg1"/>
+        <conn input="scale1.scale" output="integer1"/>
+        <conn input="count1.list" output="characters1"/>
+        <conn input="resample1.points" output="count1"/>
+        <conn input="resample1.shape" output="scale1"/>
+        <conn input="point1.value" output="resample1"/>
+        <conn input="textpath1.text" output="characters1"/>
+        <conn input="translate1.shape" output="textpath1"/>
+        <conn input="reverse1.list" output="point1"/>
+        <conn input="shift1.list" output="reverse1"/>
+        <conn input="translate1.translate" output="shift1"/>
+        <conn input="colorize1.shape" output="scale1"/>
+        <conn input="connect1.points" output="shift1"/>
+        <conn input="combine1.list7" output="colorize1"/>
+        <conn input="combine1.list2" output="translate1"/>
+        <conn input="combine1.list1" output="connect1"/>
+        <conn input="characters2.string" output="string2"/>
+        <conn input="scale2.shape" output="import_svg2"/>
+        <conn input="scale2.scale" output="integer2"/>
+        <conn input="count2.list" output="characters2"/>
+        <conn input="resample2.points" output="count2"/>
+        <conn input="resample2.shape" output="scale2"/>
+        <conn input="point2.value" output="resample2"/>
+        <conn input="textpath2.text" output="characters2"/>
+        <conn input="translate2.shape" output="textpath2"/>
+        <conn input="reverse2.list" output="point2"/>
+        <conn input="shift2.list" output="reverse2"/>
+        <conn input="translate2.translate" output="shift2"/>
+        <conn input="colorize2.shape" output="scale2"/>
+        <conn input="connect2.points" output="shift2"/>
+        <conn input="combine1.list3" output="translate2"/>
+        <conn input="combine1.list4" output="connect2"/>
+        <conn input="combine1.list6" output="colorize2"/>
+    </node>
+</ndbx>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="9e08d18d-ce22-4297-b8ea-131d2de1ef3b">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="centroid1" position="14.00,5.00" prototype="corevector.centroid"/>
+        <node name="colorize1" position="1.00,5.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+            <port name="strokeWidth" type="float" value="2.0"/>
+        </node>
+        <node name="colorize2" position="5.00,8.00" prototype="corevector.colorize">
+            <port name="stroke" type="color" value="#ff0000ff"/>
+            <port name="strokeWidth" type="float" value="20.0"/>
+        </node>
+        <node name="combine1" position="4.00,14.00" prototype="list.combine"/>
+        <node name="import_svg1" position="12.00,1.00" prototype="corevector.import_svg">
+            <port name="file" type="string" value="noun_603882-edit.svg"/>
+        </node>
+        <node name="line1" position="5.00,7.00" prototype="corevector.line"/>
+        <node name="line2" position="13.00,7.00" prototype="corevector.line"/>
+        <node name="line3" position="13.00,9.00" prototype="corevector.line"/>
+        <node name="line4" position="13.00,11.00" prototype="corevector.line">
+            <port name="point2" type="point" value="0.00,323.00"/>
+        </node>
+        <node name="point1" position="3.00,2.00" prototype="corevector.point"/>
+        <node name="rect1" position="1.00,0.00" prototype="corevector.rect">
+            <port name="width" type="float" value="500.0"/>
+            <port name="height" type="float" value="650.0"/>
+        </node>
+        <node name="scale1" position="12.00,3.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="825.00,825.00"/>
+        </node>
+        <node name="slice1" position="7.00,4.00" prototype="list.slice">
+            <port name="start_index" type="int" value="1"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice2" position="8.00,5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="3"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice3" position="6.00,3.00" prototype="list.slice">
+            <port name="size" type="int" value="1"/>
+        </node>
+        <conn input="point1.value" output="rect1"/>
+        <conn input="slice1.list" output="point1"/>
+        <conn input="slice2.list" output="point1"/>
+        <conn input="line1.point1" output="slice1"/>
+        <conn input="line1.point2" output="slice2"/>
+        <conn input="colorize2.shape" output="line1"/>
+        <conn input="scale1.shape" output="import_svg1"/>
+        <conn input="colorize1.shape" output="scale1"/>
+        <conn input="combine1.list1" output="colorize1"/>
+        <conn input="combine1.list2" output="colorize2"/>
+        <conn input="centroid1.shape" output="scale1"/>
+        <conn input="line2.point1" output="centroid1"/>
+        <conn input="line2.point2" output="slice1"/>
+        <conn input="slice3.list" output="point1"/>
+        <conn input="line3.point1" output="centroid1"/>
+        <conn input="line3.point2" output="slice3"/>
+        <conn input="combine1.list3" output="line3"/>
+        <conn input="combine1.list4" output="line2"/>
+        <conn input="line4.point1" output="centroid1"/>
+        <conn input="combine1.list5" output="line4"/>
+    </node>
+</ndbx>
