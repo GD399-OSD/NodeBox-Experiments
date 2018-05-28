@@ -26,7 +26,7 @@
             <port name="font_name" type="string" value="LibreFranklin-Black"/>
             <port name="font_size" type="float" value="150.0"/>
             <port name="align" type="string" value="RIGHT"/>
-            <port name="position" type="point" value="873.00,239.00"/>
+            <port name="position" type="point" value="799.00,239.00"/>
             <port name="width" type="float" value="729.0"/>
         </node>
         <node name="textpath2" position="0.00,0.00" prototype="corevector.textpath">
