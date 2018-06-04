@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="98c3cac8-1ca3-4b5f-b879-f72507c408de">
+    <property name="canvasHeight" value="1080"/>
+    <property name="canvasWidth" value="1920"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate1">
+        <node name="frame1" position="-4.00,-2.00" prototype="core.frame"/>
+        <node name="multiply1" position="7.00,3.00" prototype="math.multiply">
+            <port name="value2" type="float" value="4.0"/>
+        </node>
+        <node name="rect1" position="1.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1920.0"/>
+            <port name="height" type="float" value="1080.0"/>
+        </node>
+        <node name="scatter1" position="2.00,2.00" prototype="corevector.scatter"/>
+        <node name="string1" position="6.00,1.00" prototype="string.string">
+            <port name="value" type="string" value="DIY Counterculture Design"/>
+        </node>
+        <node name="string2" position="6.00,0.00" prototype="string.string">
+            <port name="value" type="string" value="Fruktur"/>
+        </node>
+        <node name="string3" position="9.00,1.00" prototype="string.string">
+            <port name="value" type="string" value="Open Source Graphic Design"/>
+        </node>
+        <node name="switch1" position="-1.00,3.00" prototype="list.switch">
+            <port name="index" type="int" value="1"/>
+        </node>
+        <node name="textpath1" position="1.00,4.00" prototype="corevector.textpath">
+            <port name="font_size" type="float" value="57.0"/>
+        </node>
+        <node name="translate1" position="1.00,5.00" prototype="corevector.translate"/>
+        <node name="wave1" position="-4.00,-1.00" prototype="math.wave">
+            <port name="max" type="float" value="1.0"/>
+        </node>
+        <node name="word_count1" position="7.00,2.00" prototype="string.word_count"/>
+        <conn input="scatter1.shape" output="rect1"/>
+        <conn input="word_count1.string" output="string1"/>
+        <conn input="multiply1.value1" output="word_count1"/>
+        <conn input="scatter1.amount" output="multiply1"/>
+        <conn input="textpath1.font_name" output="string2"/>
+        <conn input="translate1.shape" output="textpath1"/>
+        <conn input="translate1.translate" output="scatter1"/>
+        <conn input="switch1.input1" output="string1"/>
+        <conn input="switch1.input2" output="string3"/>
+        <conn input="textpath1.text" output="switch1"/>
+        <conn input="switch1.index" output="wave1"/>
+        <conn input="wave1.offset" output="frame1"/>
+    </node>
+</ndbx>

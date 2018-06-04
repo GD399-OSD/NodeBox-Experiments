@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="510af1fd-cade-46a0-9677-657442d4a5b3">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="wiggle1">
+        <node name="colorize1" position="0.00,5.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+        </node>
+        <node name="combine1" position="2.00,7.00" prototype="list.combine"/>
+        <node name="integer1" position="6.00,1.00" prototype="math.integer">
+            <port name="value" type="int" value="161"/>
+        </node>
+        <node name="line1" position="4.00,5.00" prototype="corevector.line"/>
+        <node name="resample1" position="8.00,3.00" prototype="corevector.resample"/>
+        <node name="scatter1" position="2.00,3.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="100"/>
+        </node>
+        <node name="scatter2" position="5.00,3.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="100"/>
+            <port name="seed" type="int" value="63"/>
+        </node>
+        <node name="textpath1" position="2.00,1.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="F/LOS Daily"/>
+            <port name="font_name" type="string" value="BagnardSans"/>
+            <port name="font_size" type="float" value="95.0"/>
+            <port name="align" type="string" value="LEFT"/>
+            <port name="position" type="point" value="-197.00,0.00"/>
+            <port name="width" type="float" value="314.0"/>
+        </node>
+        <node name="wiggle1" position="8.00,5.00" prototype="corevector.wiggle">
+            <port name="offset" type="point" value="5.00,5.00"/>
+            <port name="seed" type="int" value="-67"/>
+        </node>
+        <conn input="scatter1.shape" output="textpath1"/>
+        <conn input="scatter2.shape" output="textpath1"/>
+        <conn input="line1.point1" output="scatter1"/>
+        <conn input="line1.point2" output="scatter2"/>
+        <conn input="colorize1.shape" output="textpath1"/>
+        <conn input="combine1.list7" output="colorize1"/>
+        <conn input="combine1.list1" output="line1"/>
+        <conn input="scatter1.amount" output="integer1"/>
+        <conn input="scatter2.amount" output="integer1"/>
+        <conn input="resample1.shape" output="textpath1"/>
+        <conn input="wiggle1.shape" output="resample1"/>
+    </node>
+</ndbx>

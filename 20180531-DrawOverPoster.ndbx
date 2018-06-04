@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="be0e4195-6368-404a-998c-cc9dad5bf2f3">
+    <property name="canvasHeight" value="2700"/>
+    <property name="canvasWidth" value="1700"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="line1">
+        <node name="line1" position="3.00,6.00" prototype="corevector.line"/>
+        <node name="rect1" position="1.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1700.0"/>
+            <port name="height" type="float" value="2700.0"/>
+        </node>
+        <node name="scatter1" position="1.00,3.00" prototype="corevector.scatter"/>
+        <node name="scatter2" position="5.00,3.00" prototype="corevector.scatter">
+            <port name="seed" type="int" value="3"/>
+        </node>
+        <conn input="scatter1.shape" output="rect1"/>
+        <conn input="scatter2.shape" output="rect1"/>
+        <conn input="line1.point1" output="scatter1"/>
+        <conn input="line1.point2" output="scatter2"/>
+    </node>
+</ndbx>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="6418e89d-a185-4b91-aefe-b8650aed9048">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate1">
+        <node name="ellipse1" position="1.00,8.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="grid1" position="12.00,2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="55"/>
+            <port name="rows" type="int" value="55"/>
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="integer1" position="-8.00,1.00" prototype="math.integer">
+            <port name="value" type="int" value="20"/>
+        </node>
+        <node name="integer2" position="12.00,-2.00" prototype="math.integer">
+            <port name="value" type="int" value="55"/>
+        </node>
+        <node name="line1" position="3.00,5.00" prototype="corevector.line"/>
+        <node name="line2" position="-4.00,5.00" prototype="corevector.line"/>
+        <node name="multiply1" position="9.00,0.00" prototype="math.multiply"/>
+        <node name="multiply2" position="13.00,0.00" prototype="math.multiply">
+            <port name="value2" type="float" value="30.0"/>
+        </node>
+        <node name="multiply3" position="16.00,0.00" prototype="math.multiply">
+            <port name="value2" type="float" value="1.618"/>
+        </node>
+        <node name="multiply4" position="19.00,-2.00" prototype="math.multiply">
+            <port name="value2" type="float" value="1.618"/>
+        </node>
+        <node name="random_character1" position="9.00,2.00" prototype="string.random_character">
+            <port name="characters" type="string" value="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
+            <port name="amount" type="int" value="3025"/>
+        </node>
+        <node name="rect1" position="3.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="725.0"/>
+            <port name="height" type="float" value="395.0"/>
+        </node>
+        <node name="rect2" position="-4.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="725.0"/>
+            <port name="height" type="float" value="395.0"/>
+        </node>
+        <node name="round1" position="16.00,1.00" prototype="math.round"/>
+        <node name="round2" position="19.00,-1.00" prototype="math.round"/>
+        <node name="scatter1" position="1.00,3.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="10"/>
+            <port name="seed" type="int" value="22"/>
+        </node>
+        <node name="scatter2" position="4.00,3.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="10"/>
+        </node>
+        <node name="scatter3" position="-3.00,3.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="10"/>
+            <port name="seed" type="int" value="-9"/>
+        </node>
+        <node name="scatter4" position="-6.00,3.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="10"/>
+            <port name="seed" type="int" value="23"/>
+        </node>
+        <node name="textpath1" position="9.00,3.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="BioRhymeExpanded-Light"/>
+        </node>
+        <node name="translate1" position="11.00,5.00" prototype="corevector.translate"/>
+        <conn input="scatter1.shape" output="rect1"/>
+        <conn input="line1.point2" output="scatter1"/>
+        <conn input="scatter2.shape" output="rect1"/>
+        <conn input="line1.point1" output="scatter2"/>
+        <conn input="textpath1.text" output="random_character1"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="translate1.shape" output="textpath1"/>
+        <conn input="scatter4.shape" output="rect2"/>
+        <conn input="line2.point2" output="scatter4"/>
+        <conn input="scatter3.shape" output="rect2"/>
+        <conn input="line2.point1" output="scatter3"/>
+        <conn input="scatter4.amount" output="integer1"/>
+        <conn input="scatter3.amount" output="integer1"/>
+        <conn input="scatter4.seed" output="integer1"/>
+        <conn input="ellipse1.position" output="scatter1"/>
+        <conn input="multiply1.value1" output="integer2"/>
+        <conn input="multiply1.value2" output="integer2"/>
+        <conn input="random_character1.amount" output="multiply1"/>
+        <conn input="grid1.columns" output="integer2"/>
+        <conn input="multiply2.value1" output="integer2"/>
+        <conn input="grid1.width" output="multiply2"/>
+        <conn input="multiply3.value1" output="multiply2"/>
+        <conn input="round1.value" output="multiply3"/>
+        <conn input="grid1.height" output="round1"/>
+        <conn input="round2.value" output="multiply4"/>
+        <conn input="multiply4.value1" output="integer2"/>
+        <conn input="grid1.rows" output="round2"/>
+    </node>
+</ndbx>

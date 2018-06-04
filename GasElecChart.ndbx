@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="8dfd4f11-44fc-4608-9537-a1930d148d40">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="align1" position="3.00,4.00" prototype="corevector.align">
+            <port name="halign" type="string" value="none"/>
+            <port name="valign" type="string" value="bottom"/>
+        </node>
+        <node name="align2" position="6.00,4.00" prototype="corevector.align">
+            <port name="halign" type="string" value="none"/>
+            <port name="valign" type="string" value="bottom"/>
+        </node>
+        <node name="colorize1" position="3.00,3.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00ff00ff"/>
+        </node>
+        <node name="colorize2" position="6.00,3.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ff0000ff"/>
+        </node>
+        <node name="combine1" position="4.00,13.00" prototype="list.combine"/>
+        <node name="combine2" position="-3.00,6.00" prototype="list.combine"/>
+        <node name="count1" position="10.00,2.00" prototype="list.count"/>
+        <node name="import_csv1" position="3.00,-2.00" prototype="data.import_csv">
+            <port name="file" type="string" value="/Users/bjornmeansbear/Sites/energy-use/BillingData/bgec_electric_billing_data_Service 1_2015-12-19_to_2017-12-19.csv"/>
+        </node>
+        <node name="import_csv2" position="6.00,-2.00" prototype="data.import_csv">
+            <port name="file" type="string" value="/Users/bjornmeansbear/Sites/energy-use/BillingData/bgec_gas_billing_data_Service 1_2015-12-19_to_2017-12-19.csv"/>
+        </node>
+        <node name="line1" position="10.00,5.00" prototype="corevector.line"/>
+        <node name="lookup1" position="3.00,0.00" prototype="data.lookup">
+            <port name="key" type="string" value="USAGE"/>
+        </node>
+        <node name="lookup2" position="6.00,0.00" prototype="data.lookup">
+            <port name="key" type="string" value="USAGE"/>
+        </node>
+        <node name="lookup3" position="0.00,0.00" prototype="data.lookup">
+            <port name="key" type="string" value="START DATE"/>
+        </node>
+        <node name="lookup4" position="-3.00,0.00" prototype="data.lookup">
+            <port name="key" type="string" value="UNITS"/>
+        </node>
+        <node name="make_point1" position="11.00,4.00" prototype="corevector.make_point"/>
+        <node name="multiply1" position="11.00,3.00" prototype="math.multiply">
+            <port name="value2" type="float" value="110.0"/>
+        </node>
+        <node name="number1" position="-7.00,1.00" prototype="math.number">
+            <port name="value" type="float" value="17.0"/>
+        </node>
+        <node name="rect1" position="3.00,2.00" prototype="corevector.rect">
+            <port name="position" type="point" value="-15.00,0.00"/>
+            <port name="width" type="float" value="70.0"/>
+        </node>
+        <node name="rect2" position="6.00,2.00" prototype="corevector.rect">
+            <port name="position" type="point" value="15.00,0.00"/>
+            <port name="width" type="float" value="70.0"/>
+        </node>
+        <node name="resample1" position="10.00,7.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+        </node>
+        <node name="rotate1" position="0.00,4.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="-90.0"/>
+        </node>
+        <node name="string1" position="-4.00,-3.00" prototype="string.string">
+            <port name="value" type="string" value="FiraMono-Medium"/>
+        </node>
+        <node name="textpath1" position="0.00,2.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="FiraMono-Medium"/>
+            <port name="font_size" type="float" value="26.0"/>
+            <port name="align" type="string" value="RIGHT"/>
+            <port name="position" type="point" value="-11.00,13.00"/>
+        </node>
+        <node name="textpath2" position="-3.00,2.00" prototype="corevector.textpath">
+            <port name="position" type="point" value="-44.00,0.00"/>
+        </node>
+        <node name="textpath3" position="-3.00,3.00" prototype="corevector.textpath"/>
+        <node name="translate1" position="6.00,9.00" prototype="corevector.translate"/>
+        <node name="translate2" position="3.00,9.00" prototype="corevector.translate"/>
+        <node name="translate3" position="0.00,9.00" prototype="corevector.translate"/>
+        <node name="translate4" position="-3.00,9.00" prototype="corevector.translate"/>
+        <node name="translate5" position="-3.00,7.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="21.00,-514.00"/>
+        </node>
+        <conn input="lookup1.list" output="import_csv1"/>
+        <conn input="lookup2.list" output="import_csv2"/>
+        <conn input="count1.list" output="lookup2"/>
+        <conn input="multiply1.value1" output="count1"/>
+        <conn input="make_point1.x" output="multiply1"/>
+        <conn input="line1.point2" output="make_point1"/>
+        <conn input="resample1.shape" output="line1"/>
+        <conn input="translate1.translate" output="resample1"/>
+        <conn input="translate2.translate" output="resample1"/>
+        <conn input="combine1.list1" output="translate2"/>
+        <conn input="combine1.list2" output="translate1"/>
+        <conn input="translate2.shape" output="align1"/>
+        <conn input="translate1.shape" output="align2"/>
+        <conn input="rect1.height" output="lookup1"/>
+        <conn input="rect2.height" output="lookup2"/>
+        <conn input="colorize1.shape" output="rect1"/>
+        <conn input="align1.shape" output="colorize1"/>
+        <conn input="colorize2.shape" output="rect2"/>
+        <conn input="align2.shape" output="colorize2"/>
+        <conn input="resample1.points" output="count1"/>
+        <conn input="lookup3.list" output="import_csv1"/>
+        <conn input="textpath1.font_name" output="string1"/>
+        <conn input="textpath1.text" output="lookup3"/>
+        <conn input="translate3.translate" output="resample1"/>
+        <conn input="rotate1.shape" output="textpath1"/>
+        <conn input="translate3.shape" output="rotate1"/>
+        <conn input="combine1.list3" output="translate3"/>
+        <conn input="textpath2.text" output="lookup1"/>
+        <conn input="lookup4.list" output="import_csv1"/>
+        <conn input="textpath3.text" output="lookup4"/>
+        <conn input="combine2.list2" output="textpath3"/>
+        <conn input="combine2.list1" output="textpath2"/>
+        <conn input="translate4.translate" output="resample1"/>
+        <conn input="combine1.list4" output="translate4"/>
+        <conn input="textpath2.font_name" output="string1"/>
+        <conn input="textpath3.font_name" output="string1"/>
+        <conn input="textpath2.font_size" output="number1"/>
+        <conn input="textpath3.font_size" output="number1"/>
+        <conn input="translate5.shape" output="combine2"/>
+        <conn input="translate4.shape" output="translate5"/>
+    </node>
+</ndbx>

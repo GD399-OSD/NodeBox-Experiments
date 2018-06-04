@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="1274a14a-a352-4337-b477-b38655e1611b">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine2">
+        <node name="colorize1" position="-3.00,7.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#c2d3baff"/>
+            <port name="stroke" type="color" value="#ffffffff"/>
+        </node>
+        <node name="colorize2" position="-7.00,7.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+            <port name="stroke" type="color" value="#ffffffff"/>
+        </node>
+        <node name="colorize3" position="1.00,12.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="stroke" type="color" value="#848487ff"/>
+            <port name="strokeWidth" type="float" value="0.5"/>
+        </node>
+        <node name="combine1" position="1.00,11.00" prototype="list.combine"/>
+        <node name="combine2" position="5.00,15.00" prototype="list.combine"/>
+        <node name="combine3" position="-3.00,6.00" prototype="list.combine"/>
+        <node name="combine4" position="-7.00,6.00" prototype="list.combine"/>
+        <node name="line1" position="1.00,6.00" prototype="corevector.line"/>
+        <node name="line2" position="2.00,7.00" prototype="corevector.line"/>
+        <node name="line3" position="3.00,8.00" prototype="corevector.line"/>
+        <node name="resample1" position="4.00,1.00" prototype="corevector.resample"/>
+        <node name="resample2" position="5.00,2.00" prototype="corevector.resample"/>
+        <node name="resample3" position="6.00,3.00" prototype="corevector.resample"/>
+        <node name="resample4" position="7.00,4.00" prototype="corevector.resample"/>
+        <node name="textpath1" position="1.00,1.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="Reengineering"/>
+            <port name="font_name" type="string" value="LibreFranklin-Black"/>
+            <port name="position" type="point" value="-100.00,-100.00"/>
+        </node>
+        <node name="textpath2" position="3.00,3.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="the"/>
+            <port name="font_name" type="string" value="Combat"/>
+            <port name="position" type="point" value="145.00,-50.00"/>
+        </node>
+        <node name="textpath3" position="4.00,4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="Workforce"/>
+            <port name="font_name" type="string" value="BioRhyme-ExtraBold"/>
+            <port name="position" type="point" value="300.00,0.00"/>
+        </node>
+        <node name="textpath4" position="2.00,2.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="of"/>
+            <port name="font_name" type="string" value="CormorantGaramond-BoldItalic"/>
+            <port name="position" type="point" value="68.00,-33.00"/>
+        </node>
+        <node name="translate1" position="-3.00,8.00" prototype="corevector.translate"/>
+        <node name="translate2" position="-7.00,8.00" prototype="corevector.translate"/>
+        <conn input="combine1.list1" output="line1"/>
+        <conn input="combine1.list2" output="line2"/>
+        <conn input="combine1.list3" output="line3"/>
+        <conn input="resample1.shape" output="textpath1"/>
+        <conn input="line1.point1" output="resample1"/>
+        <conn input="resample2.shape" output="textpath4"/>
+        <conn input="line1.point2" output="resample2"/>
+        <conn input="line2.point1" output="resample2"/>
+        <conn input="resample3.shape" output="textpath2"/>
+        <conn input="line2.point2" output="resample3"/>
+        <conn input="line3.point1" output="resample3"/>
+        <conn input="resample4.shape" output="textpath3"/>
+        <conn input="line3.point2" output="resample4"/>
+        <conn input="combine3.list7" output="textpath3"/>
+        <conn input="combine3.list5" output="textpath2"/>
+        <conn input="combine3.list3" output="textpath4"/>
+        <conn input="combine3.list1" output="textpath1"/>
+        <conn input="colorize1.shape" output="combine3"/>
+        <conn input="combine2.list7" output="translate1"/>
+        <conn input="translate1.shape" output="colorize1"/>
+        <conn input="combine4.list7" output="textpath3"/>
+        <conn input="combine4.list5" output="textpath2"/>
+        <conn input="combine4.list3" output="textpath4"/>
+        <conn input="combine4.list1" output="textpath1"/>
+        <conn input="colorize2.shape" output="combine4"/>
+        <conn input="translate2.shape" output="colorize2"/>
+        <conn input="combine2.list6" output="translate2"/>
+        <conn input="colorize3.shape" output="combine1"/>
+        <conn input="combine2.list1" output="colorize3"/>
+    </node>
+</ndbx>

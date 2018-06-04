@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="24770116-73bd-4af2-bc2a-5e55419a4d74">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="colorize1" position="3.00,3.00" prototype="corevector.colorize">
+            <port name="stroke" type="color" value="#ffffffff"/>
+            <port name="strokeWidth" type="float" value="2.0"/>
+        </node>
+        <node name="colorize2" position="-1.00,-2.00" prototype="corevector.colorize"/>
+        <node name="colorize3" position="-3.00,5.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#e8e8e8ff"/>
+        </node>
+        <node name="combine1" position="1.00,7.00" prototype="list.combine"/>
+        <node name="combine2" position="-3.00,0.00" prototype="list.combine"/>
+        <node name="combine3" position="-1.00,-4.00" prototype="list.combine"/>
+        <node name="compound1" position="-3.00,4.00" prototype="corevector.compound">
+            <port name="function" type="string" value="subtracted"/>
+            <port name="invert_difference" type="boolean" value="true"/>
+        </node>
+        <node name="connect1" position="9.00,3.00" prototype="corevector.connect">
+            <port name="closed" type="boolean" value="false"/>
+        </node>
+        <node name="connect2" position="-1.00,-3.00" prototype="corevector.connect"/>
+        <node name="copy1" position="3.00,2.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="225"/>
+            <port name="order" type="string" value="rtr"/>
+            <port name="translate" type="point" value="1.00,-1.00"/>
+            <port name="rotate" type="float" value="2.0"/>
+        </node>
+        <node name="ellipse1" position="-4.00,-5.00" prototype="corevector.ellipse"/>
+        <node name="grid1" position="-6.00,1.00" prototype="corevector.grid">
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="group1" position="-3.00,3.00" prototype="corevector.group"/>
+        <node name="hsb_color1" position="5.00,-1.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="53.0"/>
+            <port name="brightness" type="float" value="199.0"/>
+        </node>
+        <node name="point2" position="-1.00,-8.00" prototype="corevector.point"/>
+        <node name="range1" position="5.00,-2.00" prototype="math.range">
+            <port name="end" type="float" value="255.0"/>
+            <port name="step" type="float" value="1.13333333333333"/>
+        </node>
+        <node name="rect1" position="3.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="192.0"/>
+            <port name="height" type="float" value="108.0"/>
+        </node>
+        <node name="rect2" position="9.00,0.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="rect3" position="-5.00,-6.00" prototype="corevector.rect"/>
+        <node name="rotate1" position="-4.00,8.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="8.0"/>
+            <port name="origin" type="point" value="-1086.00,510.00"/>
+        </node>
+        <node name="scatter1" position="9.00,1.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="9"/>
+        </node>
+        <node name="shape_on_path1" position="3.00,5.00" prototype="corevector.shape_on_path">
+            <port name="alignment" type="string" value="distributed"/>
+            <port name="spacing" type="float" value="0.0"/>
+        </node>
+        <node name="slice1" position="-1.00,-6.00" prototype="list.slice">
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice2" position="2.00,-6.00" prototype="list.slice">
+            <port name="start_index" type="int" value="3"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice3" position="5.00,-6.00" prototype="list.slice">
+            <port name="start_index" type="int" value="2"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="textpath1" position="-5.00,7.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="The Art of Generative Designing?"/>
+            <port name="font_name" type="string" value="IBMPlexMono-BoldItalic"/>
+            <port name="font_size" type="float" value="120.0"/>
+            <port name="align" type="string" value="LEFT"/>
+            <port name="position" type="point" value="-486.00,-195.00"/>
+            <port name="width" type="float" value="747.0"/>
+        </node>
+        <node name="translate1" position="-3.00,2.00" prototype="corevector.translate"/>
+        <conn input="scatter1.shape" output="rect2"/>
+        <conn input="connect1.points" output="scatter1"/>
+        <conn input="shape_on_path1.path" output="connect1"/>
+        <conn input="combine2.list1" output="rect3"/>
+        <conn input="combine2.list2" output="ellipse1"/>
+        <conn input="point2.value" output="rect3"/>
+        <conn input="slice1.list" output="point2"/>
+        <conn input="slice2.list" output="point2"/>
+        <conn input="slice3.list" output="point2"/>
+        <conn input="combine3.list1" output="slice1"/>
+        <conn input="combine3.list2" output="slice2"/>
+        <conn input="combine3.list3" output="slice3"/>
+        <conn input="connect2.points" output="combine3"/>
+        <conn input="colorize2.shape" output="connect2"/>
+        <conn input="combine2.list3" output="colorize2"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="translate1.shape" output="combine2"/>
+        <conn input="group1.shapes" output="translate1"/>
+        <conn input="combine1.list1" output="shape_on_path1"/>
+        <conn input="compound1.shape1" output="group1"/>
+        <conn input="compound1.shape2" output="rect2"/>
+        <conn input="colorize3.shape" output="compound1"/>
+        <conn input="combine1.list2" output="colorize3"/>
+        <conn input="hsb_color1.hue" output="range1"/>
+        <conn input="colorize1.fill" output="hsb_color1"/>
+        <conn input="copy1.shape" output="rect1"/>
+        <conn input="colorize1.shape" output="copy1"/>
+        <conn input="shape_on_path1.shape" output="colorize1"/>
+        <conn input="rotate1.shape" output="textpath1"/>
+        <conn input="combine1.list3" output="rotate1"/>
+    </node>
+</ndbx>

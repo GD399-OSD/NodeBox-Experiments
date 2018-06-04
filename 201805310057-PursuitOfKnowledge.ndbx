@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="7c4577ee-0743-4612-a964-8efde7b2d6c5">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="color1" position="10.00,4.00" prototype="color.color">
+            <port name="color" type="color" value="#cdba9bff"/>
+        </node>
+        <node name="color2" position="13.00,4.00" prototype="color.color">
+            <port name="color" type="color" value="#861c60ff"/>
+        </node>
+        <node name="colorize1" position="7.00,6.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#cdba9bff"/>
+        </node>
+        <node name="colorize2" position="9.00,7.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="4.0"/>
+        </node>
+        <node name="combine1" position="4.00,11.00" prototype="list.combine"/>
+        <node name="copy1" position="9.00,9.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="5"/>
+            <port name="translate" type="point" value="59.00,96.00"/>
+            <port name="rotate" type="float" value="145.0"/>
+            <port name="scale" type="point" value="50.00,50.00"/>
+        </node>
+        <node name="integer1" position="6.00,3.00" prototype="math.integer"/>
+        <node name="polygon1" position="6.00,5.00" prototype="corevector.polygon"/>
+        <node name="scale1" position="9.00,8.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="110.00,110.00"/>
+        </node>
+        <node name="string1" position="4.00,0.00" prototype="string.string">
+            <port name="value" type="string" value="For centuries, the pursuit of knowledge was undertaken in open and collaborative processes."/>
+        </node>
+        <node name="textpath1" position="2.00,5.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="For centuries, the pursuit of knowledge was undertaken in open and collaborative processes."/>
+            <port name="font_name" type="string" value="BioRhymeExpanded-Light"/>
+            <port name="align" type="string" value="LEFT"/>
+            <port name="position" type="point" value="-210.00,-179.00"/>
+            <port name="width" type="float" value="321.0"/>
+        </node>
+        <node name="word_count1" position="6.00,2.00" prototype="string.word_count"/>
+        <conn input="textpath1.text" output="string1"/>
+        <conn input="word_count1.string" output="string1"/>
+        <conn input="integer1.value" output="word_count1"/>
+        <conn input="polygon1.sides" output="integer1"/>
+        <conn input="colorize1.fill" output="color2"/>
+        <conn input="colorize1.shape" output="polygon1"/>
+        <conn input="colorize2.shape" output="polygon1"/>
+        <conn input="combine1.list1" output="colorize1"/>
+        <conn input="colorize2.stroke" output="color1"/>
+        <conn input="combine1.list7" output="textpath1"/>
+        <conn input="scale1.shape" output="colorize2"/>
+        <conn input="copy1.shape" output="scale1"/>
+        <conn input="combine1.list3" output="copy1"/>
+    </node>
+</ndbx>
