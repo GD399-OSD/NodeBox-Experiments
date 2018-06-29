@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="510af1fd-cade-46a0-9677-657442d4a5b3">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="colorize1" position="-2.00,4.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+            <port name="stroke" type="color" value="#737373ff"/>
+        </node>
+        <node name="colorize2" position="4.00,-4.00" prototype="corevector.colorize"/>
+        <node name="colorize3" position="-2.00,1.00" prototype="corevector.colorize"/>
+        <node name="colorize4" position="8.00,6.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#008bdeff"/>
+        </node>
+        <node name="combine1" position="2.00,7.00" prototype="list.combine"/>
+        <node name="import_svg1" position="4.00,-5.00" prototype="corevector.import_svg">
+            <port name="file" type="string" value="../../Dropbox (Personal)/visual-library/inkscape/blobject1.svg"/>
+        </node>
+        <node name="integer1" position="6.00,1.00" prototype="math.integer">
+            <port name="value" type="int" value="161"/>
+        </node>
+        <node name="integer2" position="8.00,-5.00" prototype="math.integer">
+            <port name="value" type="int" value="364"/>
+        </node>
+        <node name="integer3" position="-4.00,-5.00" prototype="math.integer">
+            <port name="value" type="int" value="9"/>
+        </node>
+        <node name="line1" position="4.00,5.00" prototype="corevector.line"/>
+        <node name="range1" position="-1.00,-5.00" prototype="math.range">
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <node name="rect1" position="-1.00,-3.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="resample1" position="8.00,3.00" prototype="corevector.resample"/>
+        <node name="rotate1" position="4.00,-2.00" prototype="corevector.rotate"/>
+        <node name="scale1" position="4.00,-3.00" prototype="corevector.scale"/>
+        <node name="scale2" position="8.00,7.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="102.00,102.00"/>
+            <port name="origin" type="point" value="4.00,4.00"/>
+        </node>
+        <node name="scatter1" position="2.00,3.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="100"/>
+        </node>
+        <node name="scatter2" position="5.00,3.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="100"/>
+            <port name="seed" type="int" value="63"/>
+        </node>
+        <node name="scatter3" position="-1.00,-1.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="14"/>
+        </node>
+        <node name="textpath1" position="2.00,1.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="Pragmatic Utopia"/>
+            <port name="font_name" type="string" value="BagnardSans"/>
+            <port name="font_size" type="float" value="167.0"/>
+            <port name="align" type="string" value="LEFT"/>
+            <port name="position" type="point" value="-392.00,-132.00"/>
+            <port name="width" type="float" value="814.0"/>
+        </node>
+        <node name="translate1" position="-2.00,0.00" prototype="corevector.translate"/>
+        <node name="wiggle1" position="8.00,5.00" prototype="corevector.wiggle">
+            <port name="offset" type="point" value="5.00,5.00"/>
+            <port name="seed" type="int" value="-67"/>
+        </node>
+        <conn input="scatter1.shape" output="textpath1"/>
+        <conn input="scatter2.shape" output="textpath1"/>
+        <conn input="line1.point1" output="scatter1"/>
+        <conn input="line1.point2" output="scatter2"/>
+        <conn input="colorize1.shape" output="textpath1"/>
+        <conn input="combine1.list7" output="colorize1"/>
+        <conn input="scatter1.amount" output="integer1"/>
+        <conn input="scatter2.amount" output="integer1"/>
+        <conn input="resample1.shape" output="textpath1"/>
+        <conn input="wiggle1.shape" output="resample1"/>
+        <conn input="colorize2.shape" output="import_svg1"/>
+        <conn input="scale1.shape" output="colorize2"/>
+        <conn input="scale1.scale" output="integer2"/>
+        <conn input="rotate1.shape" output="scale1"/>
+        <conn input="rotate1.angle" output="range1"/>
+        <conn input="translate1.shape" output="rotate1"/>
+        <conn input="translate1.translate" output="scatter3"/>
+        <conn input="scatter3.shape" output="rect1"/>
+        <conn input="scatter3.amount" output="integer3"/>
+        <conn input="range1.step" output="integer3"/>
+        <conn input="colorize3.shape" output="translate1"/>
+        <conn input="combine1.list1" output="colorize3"/>
+        <conn input="colorize4.shape" output="wiggle1"/>
+        <conn input="scale2.shape" output="colorize4"/>
+        <conn input="combine1.list5" output="scale2"/>
+    </node>
+</ndbx>

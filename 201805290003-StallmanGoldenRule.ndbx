@@ -59,7 +59,7 @@
         </node>
         <node name="resample1" position="18.00,0.00" prototype="corevector.resample">
             <port name="method" type="string" value="amount"/>
-            <port name="points" type="int" value="33"/>
+            <port name="points" type="int" value="28"/>
         </node>
         <node name="resample2" position="23.00,15.00" prototype="corevector.resample">
             <port name="method" type="string" value="amount"/>
@@ -79,9 +79,11 @@
             <port name="origin" type="point" value="-4215.00,-1739.00"/>
         </node>
         <node name="scatter1" position="23.00,1.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="10"/>
             <port name="seed" type="int" value="3"/>
         </node>
         <node name="scatter2" position="27.00,1.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="11"/>
             <port name="seed" type="int" value="6"/>
         </node>
         <node name="shift1" position="19.00,2.00" prototype="list.shift"/>
@@ -104,10 +106,10 @@
         </node>
         <node name="textpath1" position="3.00,1.00" prototype="corevector.textpath">
             <port name="text" type="string" value="— evolved from Richard Stallman"/>
-            <port name="font_name" type="string" value="CooperHewitt-ThinItalic"/>
+            <port name="font_name" type="string" value="Steps-Mono-Bold"/>
             <port name="font_size" type="float" value="42.0"/>
             <port name="align" type="string" value="LEFT"/>
-            <port name="position" type="point" value="-434.00,287.00"/>
+            <port name="position" type="point" value="-444.00,233.00"/>
             <port name="width" type="float" value="821.0"/>
         </node>
         <node name="textpath2" position="7.00,1.00" prototype="corevector.textpath">
@@ -120,7 +122,7 @@
         </node>
         <node name="textpath3" position="17.00,14.00" prototype="corevector.textpath">
             <port name="text" type="string" value="DESIGN!"/>
-            <port name="font_name" type="string" value="Savate-Italique"/>
+            <port name="font_name" type="string" value="Savate-Serif"/>
             <port name="font_size" type="float" value="57.0"/>
             <port name="align" type="string" value="LEFT"/>
             <port name="position" type="point" value="-137.00,-37.00"/>

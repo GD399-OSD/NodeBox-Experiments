@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="1a2b4108-a61a-4f57-b23f-87c3b2347f11">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <link href="python:convex_hull.py" rel="functions"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="centroid2" position="-1.00,3.00" prototype="corevector.centroid"/>
+        <node name="characters4" position="2.00,1.00" prototype="string.characters"/>
+        <node name="combine1" position="0.00,13.00" prototype="list.combine"/>
+        <node name="combine2" position="-5.00,10.00" prototype="list.combine"/>
+        <node name="connect1" position="-1.00,6.00" prototype="corevector.connect"/>
+        <node name="connect2" position="-5.00,13.00" prototype="corevector.connect"/>
+        <node name="count1" position="3.00,2.00" prototype="list.count"/>
+        <node name="distinct1" position="-5.00,9.00" prototype="list.distinct"/>
+        <node name="divide4" position="7.00,3.00" prototype="math.divide">
+            <port name="value2" type="float" value="30.0"/>
+        </node>
+        <node name="frame4" position="7.00,2.00" prototype="core.frame"/>
+        <node name="grid1" position="3.00,4.00" prototype="corevector.grid"/>
+        <node name="line1" position="-2.00,7.00" prototype="corevector.line"/>
+        <node category="geometry" description="Given list of points return subset comprising convex hull" function="convex_hull/convex_hull" name="node1" outputRange="list" position="-5.00,12.00">
+            <port description="" label="" name="mypoints" range="list" type="point" value="0.00,0.00" widget="point"/>
+        </node>
+        <node name="pick1" position="3.00,5.00" prototype="list.pick"/>
+        <node name="point1" position="-5.00,6.00" prototype="corevector.point"/>
+        <node name="point14" position="-2.00,4.00" prototype="corevector.point"/>
+        <node name="point2" position="-8.00,8.00" prototype="corevector.point"/>
+        <node name="resample13" position="-2.00,1.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+            <port name="points" type="int" value="6"/>
+        </node>
+        <node name="shift1" position="-5.00,7.00" prototype="list.shift">
+            <port name="amount" type="int" value="0"/>
+        </node>
+        <node name="sort1" position="-5.00,11.00" prototype="corevector.sort">
+            <port name="order_by" type="string" value="angle"/>
+            <port name="position" type="point" value="111.00,97.00"/>
+        </node>
+        <node name="sort3" position="-2.00,5.00" prototype="corevector.sort">
+            <port name="order_by" type="string" value="distance"/>
+            <port name="position" type="point" value="8.00,0.00"/>
+        </node>
+        <node name="string7" position="2.00,0.00" prototype="string.string">
+            <port name="value" type="string" value="WRAP!"/>
+        </node>
+        <node name="take_every1" position="-5.00,8.00" prototype="list.take_every">
+            <port name="n" type="int" value="2"/>
+        </node>
+        <node name="textpath4" position="-1.00,-1.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="Wremena-Bold"/>
+            <port name="font_size" type="float" value="100.0"/>
+            <port name="position" type="point" value="0.00,42.00"/>
+        </node>
+        <node name="translate7" position="3.00,9.00" prototype="corevector.translate"/>
+        <node name="translate8" position="-2.00,2.00" prototype="corevector.translate"/>
+        <conn input="characters4.string" output="string7"/>
+        <conn input="textpath4.text" output="characters4"/>
+        <conn input="translate7.shape" output="textpath4"/>
+        <conn input="divide4.value1" output="frame4"/>
+        <conn input="resample13.shape" output="textpath4"/>
+        <conn input="translate8.shape" output="resample13"/>
+        <conn input="point14.value" output="translate8"/>
+        <conn input="sort3.shapes" output="point14"/>
+        <conn input="centroid2.shape" output="translate8"/>
+        <conn input="sort3.position" output="centroid2"/>
+        <conn input="count1.list" output="characters4"/>
+        <conn input="grid1.columns" output="count1"/>
+        <conn input="grid1.rows" output="count1"/>
+        <conn input="pick1.list" output="grid1"/>
+        <conn input="pick1.seed" output="divide4"/>
+        <conn input="translate7.translate" output="pick1"/>
+        <conn input="translate8.translate" output="pick1"/>
+        <conn input="connect1.points" output="sort3"/>
+        <conn input="line1.point1" output="sort3"/>
+        <conn input="shift1.list" output="point1"/>
+        <conn input="take_every1.list" output="shift1"/>
+        <conn input="point1.value" output="line1"/>
+        <conn input="combine1.list1" output="connect2"/>
+        <conn input="combine1.list7" output="translate7"/>
+        <conn input="distinct1.list" output="take_every1"/>
+        <conn input="node1.mypoints" output="sort1"/>
+        <conn input="connect2.points" output="node1"/>
+        <conn input="combine2.list1" output="distinct1"/>
+        <conn input="sort1.shapes" output="combine2"/>
+        <conn input="point2.value" output="translate7"/>
+        <conn input="combine2.list2" output="point2"/>
+    </node>
+</ndbx>

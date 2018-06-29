@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="f14eb12a-1cb9-4bf3-926c-e32bfa313ede">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="add1" position="10.00,0.00" prototype="math.add">
+            <port name="value2" type="float" value="85.0"/>
+        </node>
+        <node name="colorize1" position="6.00,6.00" prototype="corevector.colorize"/>
+        <node name="combine1" position="4.00,8.00" prototype="list.combine"/>
+        <node name="connect1" position="6.00,5.00" prototype="corevector.connect"/>
+        <node name="divide1" position="9.00,-2.00" prototype="math.divide">
+            <port name="value2" type="float" value="10.0"/>
+        </node>
+        <node name="divide2" position="12.00,-2.00" prototype="math.divide">
+            <port name="value2" type="float" value="5.0"/>
+        </node>
+        <node name="divide3" position="15.00,-2.00" prototype="math.divide">
+            <port name="value2" type="float" value="12.0"/>
+        </node>
+        <node name="frame1" position="9.00,-3.00" prototype="core.frame"/>
+        <node name="line1" position="2.00,5.00" prototype="corevector.line"/>
+        <node name="pick1" position="6.00,4.00" prototype="list.pick"/>
+        <node name="rect1" position="3.00,0.00" prototype="corevector.rect">
+            <port name="width" type="float" value="198.0"/>
+            <port name="height" type="float" value="470.0"/>
+        </node>
+        <node name="scatter1" position="1.00,2.00" prototype="corevector.scatter"/>
+        <node name="scatter2" position="4.00,2.00" prototype="corevector.scatter">
+            <port name="seed" type="int" value="20"/>
+        </node>
+        <node name="scatter3" position="7.00,2.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="5"/>
+            <port name="seed" type="int" value="10"/>
+        </node>
+        <conn input="scatter1.shape" output="rect1"/>
+        <conn input="line1.point1" output="scatter1"/>
+        <conn input="line1.point2" output="scatter2"/>
+        <conn input="scatter2.shape" output="rect1"/>
+        <conn input="combine1.list1" output="line1"/>
+        <conn input="combine1.list2" output="colorize1"/>
+        <conn input="scatter3.shape" output="rect1"/>
+        <conn input="pick1.list" output="scatter1"/>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="add1.value1" output="divide1"/>
+        <conn input="scatter1.seed" output="divide1"/>
+        <conn input="divide2.value1" output="frame1"/>
+        <conn input="divide3.value1" output="frame1"/>
+        <conn input="scatter2.seed" output="divide2"/>
+        <conn input="scatter3.seed" output="divide3"/>
+        <conn input="pick1.seed" output="divide3"/>
+        <conn input="connect1.points" output="pick1"/>
+        <conn input="colorize1.shape" output="connect1"/>
+    </node>
+</ndbx>
