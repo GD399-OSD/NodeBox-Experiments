@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="453bc8c5-54ab-4daa-96b0-5705e76c2d71">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine2">
+        <node name="add1" position="-15.00,2.00" prototype="math.add"/>
+        <node name="characters1" position="1.00,0.00" prototype="string.characters"/>
+        <node name="characters2" position="33.00,1.00" prototype="string.characters"/>
+        <node name="combine1" position="-7.00,10.00" prototype="list.combine"/>
+        <node name="combine2" position="25.00,11.00" prototype="list.combine"/>
+        <node name="count1" position="5.00,1.00" prototype="list.count"/>
+        <node name="count2" position="37.00,1.00" prototype="list.count"/>
+        <node name="divide1" position="-14.00,-1.00" prototype="math.divide">
+            <port name="value2" type="float" value="10.0"/>
+        </node>
+        <node name="frame1" position="-10.00,-2.00" prototype="core.frame"/>
+        <node name="integer1" position="42.00,0.00" prototype="math.integer">
+            <port name="value" type="int" value="150"/>
+        </node>
+        <node name="line1" position="5.00,2.00" prototype="corevector.line">
+            <port name="point1" type="point" value="-150.00,0.00"/>
+            <port name="point2" type="point" value="150.00,0.00"/>
+        </node>
+        <node name="line2" position="-9.00,8.00" prototype="corevector.line"/>
+        <node name="line3" position="20.00,9.00" prototype="corevector.line"/>
+        <node name="line4" position="-5.00,8.00" prototype="corevector.line"/>
+        <node name="line5" position="29.00,9.00" prototype="corevector.line"/>
+        <node name="line6" position="37.00,3.00" prototype="corevector.line">
+            <port name="point1" type="point" value="-130.00,0.00"/>
+            <port name="point2" type="point" value="130.00,0.00"/>
+        </node>
+        <node name="make_point1" position="42.00,3.00" prototype="corevector.make_point"/>
+        <node name="make_point2" position="45.00,3.00" prototype="corevector.make_point"/>
+        <node name="negate1" position="43.00,2.00" prototype="math.negate"/>
+        <node name="point1" position="-12.00,5.00" prototype="corevector.point"/>
+        <node name="point2" position="-3.00,5.00" prototype="corevector.point"/>
+        <node name="point3" position="20.00,6.00" prototype="corevector.point"/>
+        <node name="point4" position="29.00,6.00" prototype="corevector.point"/>
+        <node name="point5" position="23.00,7.00" prototype="corevector.point"/>
+        <node name="point6" position="26.00,7.00" prototype="corevector.point"/>
+        <node name="resample1" position="5.00,3.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+        </node>
+        <node name="resample2" position="-3.00,2.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+            <port name="points" type="int" value="100"/>
+        </node>
+        <node name="resample3" position="29.00,3.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+            <port name="points" type="int" value="75"/>
+        </node>
+        <node name="resample4" position="37.00,4.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+        </node>
+        <node name="shift1" position="-12.00,6.00" prototype="list.shift">
+            <port name="amount" type="int" value="18"/>
+        </node>
+        <node name="shift2" position="-3.00,6.00" prototype="list.shift">
+            <port name="amount" type="int" value="112"/>
+        </node>
+        <node name="shift3" position="20.00,7.00" prototype="list.shift">
+            <port name="amount" type="int" value="33"/>
+        </node>
+        <node name="shift4" position="29.00,7.00" prototype="list.shift">
+            <port name="amount" type="int" value="0"/>
+        </node>
+        <node name="slice1" position="-3.00,4.00" prototype="list.slice">
+            <port name="start_index" type="int" value="3"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice2" position="-6.00,4.00" prototype="list.slice">
+            <port name="start_index" type="int" value="2"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice3" position="-9.00,4.00" prototype="list.slice">
+            <port name="start_index" type="int" value="1"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice4" position="-12.00,4.00" prototype="list.slice">
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice5" position="26.00,5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="2"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice6" position="23.00,5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="1"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice7" position="20.00,5.00" prototype="list.slice">
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice8" position="29.00,5.00" prototype="list.slice">
+            <port name="start_index" type="int" value="3"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="string1" position="1.00,-1.00" prototype="string.string">
+            <port name="value" type="string" value="CAPE"/>
+        </node>
+        <node name="string2" position="5.00,-1.00" prototype="string.string">
+            <port name="value" type="string" value="Bemio"/>
+        </node>
+        <node name="string3" position="33.00,0.00" prototype="string.string">
+            <port name="value" type="string" value="CAPE"/>
+        </node>
+        <node name="string4" position="37.00,0.00" prototype="string.string">
+            <port name="value" type="string" value="Bemio"/>
+        </node>
+        <node name="textpath1" position="1.00,2.00" prototype="corevector.textpath">
+            <port name="font_size" type="float" value="217.0"/>
+        </node>
+        <node name="textpath2" position="33.00,3.00" prototype="corevector.textpath">
+            <port name="font_size" type="float" value="200.0"/>
+        </node>
+        <node name="translate1" position="1.00,5.00" prototype="corevector.translate"/>
+        <node name="translate2" position="33.00,5.00" prototype="corevector.translate"/>
+        <node name="wave1" position="-10.00,0.00" prototype="math.wave">
+            <port name="min" type="float" value="2.0"/>
+            <port name="period" type="float" value="1000.0"/>
+        </node>
+        <conn input="characters1.string" output="string1"/>
+        <conn input="textpath1.text" output="characters1"/>
+        <conn input="textpath1.font_name" output="string2"/>
+        <conn input="count1.list" output="characters1"/>
+        <conn input="resample1.points" output="count1"/>
+        <conn input="resample1.shape" output="line1"/>
+        <conn input="translate1.translate" output="resample1"/>
+        <conn input="slice1.list" output="resample2"/>
+        <conn input="slice2.list" output="resample2"/>
+        <conn input="slice3.list" output="resample2"/>
+        <conn input="slice4.list" output="resample2"/>
+        <conn input="combine1.list1" output="line2"/>
+        <conn input="combine1.list3" output="line4"/>
+        <conn input="line4.point1" output="slice2"/>
+        <conn input="translate1.shape" output="textpath1"/>
+        <conn input="resample2.shape" output="translate1"/>
+        <conn input="line2.point2" output="slice3"/>
+        <conn input="line2.point1" output="shift1"/>
+        <conn input="point1.value" output="slice4"/>
+        <conn input="shift1.list" output="point1"/>
+        <conn input="shift2.list" output="point2"/>
+        <conn input="line4.point2" output="shift2"/>
+        <conn input="point2.value" output="slice1"/>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="shift1.amount" output="divide1"/>
+        <conn input="wave1.period" output="frame1"/>
+        <conn input="add1.value1" output="divide1"/>
+        <conn input="shift2.amount" output="add1"/>
+        <conn input="characters2.string" output="string3"/>
+        <conn input="textpath2.text" output="characters2"/>
+        <conn input="textpath2.font_name" output="string4"/>
+        <conn input="count2.list" output="characters2"/>
+        <conn input="resample4.shape" output="line6"/>
+        <conn input="translate2.translate" output="resample4"/>
+        <conn input="slice8.list" output="resample3"/>
+        <conn input="slice6.list" output="resample3"/>
+        <conn input="slice7.list" output="resample3"/>
+        <conn input="combine2.list1" output="line3"/>
+        <conn input="combine2.list3" output="line5"/>
+        <conn input="translate2.shape" output="textpath2"/>
+        <conn input="resample3.shape" output="translate2"/>
+        <conn input="line3.point1" output="shift3"/>
+        <conn input="point3.value" output="slice7"/>
+        <conn input="shift3.list" output="point3"/>
+        <conn input="shift4.list" output="point4"/>
+        <conn input="line5.point2" output="shift4"/>
+        <conn input="point4.value" output="slice8"/>
+        <conn input="resample4.points" output="count2"/>
+        <conn input="line3.point2" output="point5"/>
+        <conn input="line5.point1" output="point6"/>
+        <conn input="negate1.value" output="integer1"/>
+        <conn input="make_point1.x" output="negate1"/>
+        <conn input="line6.point1" output="make_point1"/>
+        <conn input="line6.point2" output="make_point2"/>
+        <conn input="make_point2.x" output="integer1"/>
+        <conn input="point5.value" output="slice6"/>
+        <conn input="slice5.list" output="resample3"/>
+        <conn input="point6.value" output="slice5"/>
+    </node>
+</ndbx>

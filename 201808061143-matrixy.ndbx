@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="3cd8fea1-5623-466c-a0da-3d4ee90c3113">
+    <property name="canvasHeight" value="2700"/>
+    <property name="canvasWidth" value="3600"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate2">
+        <node name="characters1" position="7.00,1.00" prototype="string.characters"/>
+        <node name="distinct1" position="3.00,2.00" prototype="list.distinct"/>
+        <node name="grid1" position="10.00,1.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="321"/>
+            <port name="rows" type="int" value="25"/>
+            <port name="width" type="float" value="3600.0"/>
+            <port name="height" type="float" value="2700.0"/>
+        </node>
+        <node name="grid2" position="18.00,1.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="321"/>
+            <port name="rows" type="int" value="12"/>
+            <port name="width" type="float" value="3600.0"/>
+            <port name="height" type="float" value="2700.0"/>
+        </node>
+        <node name="grid3" position="-3.00,2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="322"/>
+            <port name="rows" type="int" value="237"/>
+            <port name="width" type="float" value="3600.0"/>
+            <port name="height" type="float" value="2700.0"/>
+        </node>
+        <node name="line1" position="13.00,1.00" prototype="corevector.line">
+            <port name="point2" type="point" value="0.00,101.00"/>
+        </node>
+        <node name="line2" position="21.00,1.00" prototype="corevector.line">
+            <port name="point2" type="point" value="0.00,223.75"/>
+        </node>
+        <node name="pick1" position="-3.00,4.00" prototype="list.pick">
+            <port name="amount" type="int" value="57235"/>
+        </node>
+        <node name="pick2" position="14.00,3.00" prototype="list.pick">
+            <port name="amount" type="int" value="5350"/>
+            <port name="seed" type="int" value="5"/>
+        </node>
+        <node name="pick3" position="22.00,3.00" prototype="list.pick">
+            <port name="amount" type="int" value="2675"/>
+            <port name="seed" type="int" value="5"/>
+        </node>
+        <node name="random_numbers1" position="3.00,0.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="100"/>
+            <port name="end" type="float" value="200.0"/>
+        </node>
+        <node name="rect1" position="3.00,6.00" prototype="corevector.rect">
+            <port name="width" type="float" value="10.1"/>
+            <port name="height" type="float" value="10.1"/>
+        </node>
+        <node name="resample1" position="13.00,6.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+        </node>
+        <node name="resample2" position="21.00,6.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+        </node>
+        <node name="round1" position="3.00,1.00" prototype="math.round"/>
+        <node name="shuffle1" prototype="list.shuffle"/>
+        <node name="string1" position="7.00,0.00" prototype="string.string">
+            <port name="value" type="string" value="0101010101"/>
+        </node>
+        <node name="textpath1" position="7.00,3.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="IBMPlexMono-Medium"/>
+            <port name="font_size" type="float" value="13.0"/>
+        </node>
+        <node name="translate1" position="18.00,8.00" prototype="corevector.translate"/>
+        <node name="translate2" position="-3.00,8.00" prototype="corevector.translate"/>
+        <node name="translate3" position="13.00,5.00" prototype="corevector.translate"/>
+        <node name="translate4" position="10.00,8.00" prototype="corevector.translate"/>
+        <node name="translate5" position="21.00,5.00" prototype="corevector.translate"/>
+        <conn input="characters1.string" output="string1"/>
+        <conn input="translate3.shape" output="line1"/>
+        <conn input="translate3.translate" output="pick2"/>
+        <conn input="pick2.list" output="grid1"/>
+        <conn input="resample1.shape" output="translate3"/>
+        <conn input="translate4.translate" output="resample1"/>
+        <conn input="shuffle1.list" output="characters1"/>
+        <conn input="textpath1.text" output="shuffle1"/>
+        <conn input="round1.value" output="random_numbers1"/>
+        <conn input="distinct1.list" output="round1"/>
+        <conn input="shuffle1.seed" output="distinct1"/>
+        <conn input="translate4.shape" output="textpath1"/>
+        <conn input="translate5.shape" output="line2"/>
+        <conn input="translate5.translate" output="pick3"/>
+        <conn input="pick3.list" output="grid2"/>
+        <conn input="resample2.shape" output="translate5"/>
+        <conn input="translate1.shape" output="textpath1"/>
+        <conn input="translate1.translate" output="resample2"/>
+        <conn input="translate2.shape" output="textpath1"/>
+        <conn input="pick1.list" output="grid3"/>
+        <conn input="translate2.translate" output="grid3"/>
+    </node>
+</ndbx>

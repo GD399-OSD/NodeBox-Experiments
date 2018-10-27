@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="b94966f2-b94b-440b-bfe3-e721c2745989">
+    <property name="canvasHeight" value="2800"/>
+    <property name="canvasWidth" value="1700"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate7">
+        <node name="colorize1" position="-1.00,-2.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#b1ffbcff"/>
+        </node>
+        <node name="colorize2" position="-5.00,-2.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffb1c8ff"/>
+        </node>
+        <node name="colorize3" position="3.00,-2.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffefbcff"/>
+        </node>
+        <node name="colorize4" position="7.00,-2.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#bce5ffff"/>
+        </node>
+        <node name="colorize5" position="-9.00,-1.00" prototype="corevector.colorize"/>
+        <node name="colorize6" position="-10.00,-2.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+        </node>
+        <node name="combine1" position="-1.00,-1.00" prototype="list.combine"/>
+        <node name="combine2" position="-5.00,-1.00" prototype="list.combine"/>
+        <node name="combine3" position="-1.00,4.00" prototype="list.combine"/>
+        <node name="combine4" position="3.00,-1.00" prototype="list.combine"/>
+        <node name="combine5" position="7.00,-1.00" prototype="list.combine"/>
+        <node name="combine6" position="-9.00,0.00" prototype="list.combine"/>
+        <node name="combine7" position="-1.00,9.00" prototype="list.combine"/>
+        <node name="copy1" position="-1.00,1.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="50"/>
+            <port name="order" type="string" value="rtr"/>
+            <port name="translate" type="point" value="-30.00,43.00"/>
+            <port name="rotate" type="float" value="44.0"/>
+        </node>
+        <node name="copy2" position="-5.00,1.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="50"/>
+            <port name="order" type="string" value="rtr"/>
+            <port name="translate" type="point" value="13.00,16.00"/>
+            <port name="rotate" type="float" value="31.0"/>
+        </node>
+        <node name="copy3" position="3.00,1.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="50"/>
+            <port name="order" type="string" value="rtr"/>
+            <port name="translate" type="point" value="18.00,12.00"/>
+            <port name="rotate" type="float" value="-20.0"/>
+        </node>
+        <node name="copy4" position="-1.00,6.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="3"/>
+            <port name="translate" type="point" value="142.00,362.00"/>
+            <port name="rotate" type="float" value="49.0"/>
+        </node>
+        <node name="copy5" position="7.00,1.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="50"/>
+            <port name="order" type="string" value="rtr"/>
+            <port name="translate" type="point" value="75.00,12.00"/>
+            <port name="rotate" type="float" value="10.0"/>
+        </node>
+        <node name="grid3" position="6.00,-7.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="5"/>
+            <port name="rows" type="int" value="5"/>
+            <port name="width" type="float" value="1558.0"/>
+            <port name="height" type="float" value="1755.0"/>
+        </node>
+        <node name="group1" position="-1.00,0.00" prototype="corevector.group"/>
+        <node name="group2" position="-5.00,0.00" prototype="corevector.group"/>
+        <node name="group3" position="3.00,0.00" prototype="corevector.group"/>
+        <node name="group4" position="-1.00,5.00" prototype="corevector.group"/>
+        <node name="group5" position="7.00,0.00" prototype="corevector.group"/>
+        <node name="rect2" position="-1.00,-5.00" prototype="corevector.rect">
+            <port name="width" type="float" value="85.0"/>
+            <port name="height" type="float" value="140.0"/>
+        </node>
+        <node name="scale1" position="-9.00,1.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="150.00,150.00"/>
+        </node>
+        <node name="scale2" position="-1.00,-4.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="200.00,200.00"/>
+        </node>
+        <node name="string1" position="-6.00,-7.00" prototype="string.string">
+            <port name="value" type="string" value="BluuNext-BoldItalic"/>
+        </node>
+        <node name="textpath2" position="-4.00,-4.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="Why is Generative Design useful? What problems am I solving I couldn't before? How is the computer a good collaborator? Is this more sustainable? What resource does it save?"/>
+            <port name="font_name" type="string" value="Bagnard"/>
+            <port name="font_size" type="float" value="16.0"/>
+            <port name="align" type="string" value="LEFT"/>
+            <port name="position" type="point" value="-68.00,-104.00"/>
+            <port name="width" type="float" value="126.0"/>
+        </node>
+        <node name="translate1" position="-1.00,2.00" prototype="corevector.translate"/>
+        <node name="translate2" position="-5.00,2.00" prototype="corevector.translate"/>
+        <node name="translate3" position="3.00,2.00" prototype="corevector.translate"/>
+        <node name="translate4" position="7.00,2.00" prototype="corevector.translate"/>
+        <node name="translate5" position="-9.00,2.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-8.00,61.00"/>
+        </node>
+        <node name="translate6" position="-1.00,7.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-20.00,150.00"/>
+        </node>
+        <node name="translate7" position="-1.00,11.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-100.00,-500.00"/>
+        </node>
+        <conn input="translate1.shape" output="copy1"/>
+        <conn input="group1.shapes" output="combine1"/>
+        <conn input="copy1.shape" output="group1"/>
+        <conn input="textpath2.font_name" output="string1"/>
+        <conn input="combine2.list2" output="textpath2"/>
+        <conn input="group2.shapes" output="combine2"/>
+        <conn input="translate2.shape" output="copy2"/>
+        <conn input="combine3.list1" output="translate2"/>
+        <conn input="combine3.list2" output="translate1"/>
+        <conn input="translate3.translate" output="grid3"/>
+        <conn input="translate3.shape" output="copy3"/>
+        <conn input="group3.shapes" output="combine4"/>
+        <conn input="copy3.shape" output="group3"/>
+        <conn input="combine3.list3" output="translate3"/>
+        <conn input="combine1.list2" output="textpath2"/>
+        <conn input="combine4.list2" output="textpath2"/>
+        <conn input="scale2.shape" output="rect2"/>
+        <conn input="colorize2.shape" output="scale2"/>
+        <conn input="colorize1.shape" output="scale2"/>
+        <conn input="combine1.list1" output="colorize1"/>
+        <conn input="colorize3.shape" output="scale2"/>
+        <conn input="combine4.list1" output="colorize3"/>
+        <conn input="translate1.translate" output="grid3"/>
+        <conn input="translate2.translate" output="grid3"/>
+        <conn input="group4.shapes" output="combine3"/>
+        <conn input="copy4.shape" output="group4"/>
+        <conn input="translate4.translate" output="grid3"/>
+        <conn input="translate4.shape" output="copy5"/>
+        <conn input="group5.shapes" output="combine5"/>
+        <conn input="copy5.shape" output="group5"/>
+        <conn input="combine5.list2" output="textpath2"/>
+        <conn input="colorize4.shape" output="scale2"/>
+        <conn input="combine5.list1" output="colorize4"/>
+        <conn input="combine3.list4" output="translate4"/>
+        <conn input="scale1.shape" output="combine6"/>
+        <conn input="translate5.shape" output="scale1"/>
+        <conn input="combine7.list2" output="translate5"/>
+        <conn input="translate6.shape" output="copy4"/>
+        <conn input="combine7.list1" output="translate6"/>
+        <conn input="colorize5.shape" output="scale2"/>
+        <conn input="combine6.list1" output="colorize5"/>
+        <conn input="colorize6.shape" output="textpath2"/>
+        <conn input="combine6.list2" output="colorize6"/>
+        <conn input="combine2.list1" output="colorize2"/>
+        <conn input="copy2.shape" output="group2"/>
+        <conn input="translate7.shape" output="combine7"/>
+    </node>
+</ndbx>

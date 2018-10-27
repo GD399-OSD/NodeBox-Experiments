@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="83054f85-cc17-4d48-b91f-17011dab916d">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="colorize1">
+        <node name="colorize1" position="1.00,3.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#7f7f7fff"/>
+        </node>
+        <node name="divide1" position="4.00,0.00" prototype="math.divide">
+            <port name="value2" type="float" value="3.0"/>
+        </node>
+        <node name="ellipse1" position="-2.00,0.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="1.5"/>
+            <port name="height" type="float" value="1.5"/>
+        </node>
+        <node name="frame1" position="4.00,-1.00" prototype="core.frame"/>
+        <node name="scatter1" position="1.00,1.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="8000"/>
+            <port name="seed" type="int" value="2"/>
+        </node>
+        <node name="textpath1" position="1.00,0.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="DOTS"/>
+            <port name="font_name" type="string" value="LeMurmure-Regular"/>
+            <port name="font_size" type="float" value="516.0"/>
+            <port name="position" type="point" value="27.00,222.00"/>
+        </node>
+        <node name="translate1" position="1.00,2.00" prototype="corevector.translate"/>
+        <conn input="scatter1.shape" output="textpath1"/>
+        <conn input="translate1.translate" output="scatter1"/>
+        <conn input="translate1.shape" output="ellipse1"/>
+        <conn input="colorize1.shape" output="translate1"/>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="scatter1.seed" output="divide1"/>
+    </node>
+</ndbx>

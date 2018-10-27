@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="c7d68d48-cfa7-4a28-a602-f33f0f8b8858">
+    <property name="canvasHeight" value="1300"/>
+    <property name="canvasWidth" value="2100"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="scale1">
+        <node name="colorize1" position="5.00,10.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+        </node>
+        <node name="colorize2" position="9.00,9.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#c6270cff"/>
+        </node>
+        <node name="colorize3" position="13.00,8.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="stroke" type="color" value="#ffffffff"/>
+            <port name="strokeWidth" type="float" value="16.0"/>
+        </node>
+        <node name="colorize4" position="14.00,7.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="stroke" type="color" value="#c6270cff"/>
+            <port name="strokeWidth" type="float" value="12.0"/>
+        </node>
+        <node name="colorize5" position="15.00,6.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="stroke" type="color" value="#ffffffff"/>
+            <port name="strokeWidth" type="float" value="4.0"/>
+        </node>
+        <node name="combine1" position="7.00,12.00" prototype="list.combine"/>
+        <node name="delete1" position="5.00,8.00" prototype="corevector.delete">
+            <port name="operation" type="string" value="non-selected"/>
+        </node>
+        <node name="fivePointShape" position="1.00,2.00" prototype="core.network" renderedChild="colorize1">
+            <node name="colorize1" position="-3.00,2.00" prototype="corevector.colorize"/>
+            <node name="connect1" position="-3.00,1.00" prototype="corevector.connect"/>
+            <node name="rect1" position="-3.00,-1.00" prototype="corevector.rect">
+                <port name="width" type="float" value="250.0"/>
+                <port name="height" type="float" value="150.0"/>
+            </node>
+            <node name="scatter1" position="-3.00,0.00" prototype="corevector.scatter">
+                <port name="amount" type="int" value="5"/>
+            </node>
+            <port childReference="scatter1.seed" description="The random variation." label="" name="changeShape" range="value" type="int" value="0" widget="int"/>
+            <port childReference="rect1.width" description="The width of the rectangle." label="" name="itemWidth" range="value" type="float" value="250.0" widget="float"/>
+            <port childReference="rect1.height" description="The height of the rectangle." label="" name="itemHeight" range="value" type="float" value="150.0" widget="float"/>
+            <conn input="scatter1.shape" output="rect1"/>
+            <conn input="connect1.points" output="scatter1"/>
+            <conn input="colorize1.shape" output="connect1"/>
+        </node>
+        <node name="grid1" position="6.00,2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="50"/>
+            <port name="rows" type="int" value="50"/>
+            <port name="width" type="float" value="10000.0"/>
+            <port name="height" type="float" value="10000.0"/>
+        </node>
+        <node name="group1" position="5.00,9.00" prototype="corevector.group"/>
+        <node name="integer1" position="4.00,-3.00" prototype="math.integer">
+            <port name="value" type="int" value="35"/>
+        </node>
+        <node name="multiply1" position="1.00,0.00" prototype="math.multiply"/>
+        <node name="multiply2" position="6.00,-1.00" prototype="math.multiply">
+            <port name="value2" type="float" value="3.0"/>
+        </node>
+        <node name="multiply3" position="9.00,-1.00" prototype="math.multiply">
+            <port name="value2" type="float" value="5.0"/>
+        </node>
+        <node name="multiply4" position="6.00,0.00" prototype="math.multiply"/>
+        <node name="multiply5" position="9.00,0.00" prototype="math.multiply"/>
+        <node name="range1" position="1.00,1.00" prototype="math.range">
+            <port name="end" type="float" value="2500.0"/>
+        </node>
+        <node name="rect1" position="8.00,6.00" prototype="corevector.rect">
+            <port name="width" type="float" value="950.0"/>
+            <port name="height" type="float" value="950.0"/>
+        </node>
+        <node name="scale1" position="4.00,6.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="33.00,33.00"/>
+        </node>
+        <node name="scale2" position="9.00,8.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="108.00,108.00"/>
+        </node>
+        <node name="scale3" position="13.00,4.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="105.00,105.00"/>
+        </node>
+        <node name="translate1" position="4.00,5.00" prototype="corevector.translate"/>
+        <conn input="translate1.shape" output="fivePointShape"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="fivePointShape.changeShape" output="range1"/>
+        <conn input="multiply1.value1" output="integer1"/>
+        <conn input="multiply1.value2" output="integer1"/>
+        <conn input="range1.end" output="multiply1"/>
+        <conn input="grid1.columns" output="integer1"/>
+        <conn input="grid1.rows" output="integer1"/>
+        <conn input="multiply2.value1" output="integer1"/>
+        <conn input="multiply3.value1" output="integer1"/>
+        <conn input="fivePointShape.itemHeight" output="multiply2"/>
+        <conn input="fivePointShape.itemWidth" output="multiply3"/>
+        <conn input="multiply4.value1" output="multiply3"/>
+        <conn input="multiply4.value2" output="integer1"/>
+        <conn input="grid1.width" output="multiply4"/>
+        <conn input="multiply5.value2" output="multiply2"/>
+        <conn input="multiply5.value1" output="integer1"/>
+        <conn input="grid1.height" output="multiply5"/>
+        <conn input="scale1.shape" output="translate1"/>
+        <conn input="delete1.shape" output="scale1"/>
+        <conn input="delete1.bounding" output="rect1"/>
+        <conn input="group1.shapes" output="delete1"/>
+        <conn input="colorize1.shape" output="group1"/>
+        <conn input="scale2.shape" output="rect1"/>
+        <conn input="colorize2.shape" output="scale2"/>
+        <conn input="combine1.list1" output="colorize2"/>
+        <conn input="combine1.list7" output="colorize1"/>
+        <conn input="scale3.shape" output="rect1"/>
+        <conn input="colorize5.shape" output="scale3"/>
+        <conn input="colorize4.shape" output="scale3"/>
+        <conn input="colorize3.shape" output="scale3"/>
+    </node>
+</ndbx>
